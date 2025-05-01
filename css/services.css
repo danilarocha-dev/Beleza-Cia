@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: linear-gradient(to right, #fce4ec, #ffffff);
+    flex-wrap: wrap;
+    min-height: calc(100vh - 130px);
+    margin-top: 0;
+    margin-bottom: 28px;
+}
+
+p {
+    font-size: 23px;
+    color: #f8b7c2;
+    font-family: 'pacifico', cursive;
+    margin: 0; 
+}
+
+ul#album-fotos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px; 
+    justify-content: center;
+    padding: 50px 20px;
+    list-style: none; 
+    margin: 0 auto;
+}
+
+/*Cards*/
+ul#album-fotos li {
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+    border: 3px solid #f9a7a7;
+    background-color: #f9a7a7;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    -webkit-transition: all .4s ease-in;
+}
+
+/*formatação legenda da foto*/
+ul#album-fotos li span {
+    opacity: 0;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
+    background-color: rgba(0, 0, 0,.4);
+    font-size: 10pt;
+    line-height: 360px;
+    padding: 6px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+/*Formatação para ampliar a foto*/
+ul#album-fotos li:hover {
+   -webkit-transform: scale(1.5);
+}
+
+ul#album-fotos li:hover span {
+    opacity: 1;
+}
+
+/*adicionando as imagens e formatando ás*/
+ul#album-fotos li#foto05 {
+    background: url(../img/05.jpg) no-repeat center center;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+/*adicionando efeito zoom na imagem*/
+ul#album-fotos li#foto05:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+
+}
+
+ul#album-fotos li#foto06 {
+    background: url(../img/06.jpeg) no-repeat center center;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto06:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+
+}
+
+ul#album-fotos li#foto07 {
+    background: url(../img/07.jpg) no-repeat center center;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto07:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+
+}
+
+ul#album-fotos li#foto08 {
+    background: url(../img/08.jpg) no-repeat center center;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto08:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+
+}
+
+ul#album-fotos li#foto09 {
+    background: url(../img/09.png) no-repeat center center;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto09:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+
+}
+
+ul#album-fotos li#foto10 {
+    background: url(../img/10.png) no-repeat center center;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto10:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+
+}
+
+ul#album-fotos li#foto11 {
+    background: url(../img/11.png) no-repeat center center;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto11:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+
+}
+
+ul#album-fotos li#foto12 {
+    background: url(../img/12.jpg) no-repeat center center;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+
+ul#album-fotos li#foto12:hover {
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+
+}
+
+footer#rodape p {
+    text-align: center;
+    color: #f9a7a7;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    margin: 0;
+}

@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo span {
+  font-family: serif;
+  font-style: italic;
+}
+
+
+/*formatacao do menu*/
+nav ul { 
+  list-style: none;  
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+  color: #f9a7a7;
+}
+
+nav ul li a:hover {
+  color: #f9a7a7;
+}
+
+nav ul .active {
+  color: #f9a7a7;
+  border-bottom: 2px solid #f9a7a7;
+}
+
+.redes-sociais i {
+  margin-left: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.redes-sociais i:hover {
+  transform: scale(1.2);
+  color: #f9a7a7;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background: linear-gradient(to right, #fce4ec, #ffffff);
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.texto-hero {
+  max-width: 900px;
+}
+
+.texto-hero h1 {
+  font-size: 80px;
+  color: #f8b7c2;
+  font-family: 'Pacifico', cursive;
+  transition: transform 0.4s;
+  margin-left: 230px;
+  text-align: left;
+}
+
+.texto-hero h1:hover {
+  transform: scale(1.05);
+}
+
+.texto-hero p {
+  font-size: 30px;
+  color: #f8b7c2;
+  font-family: 'pacifico', cursive;
+  margin-top: 10px;
+  margin-left: 170px;
+}
+
+.imagem-hero img {
+  max-width: 480px;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.imagem-hero img:hover {
+  transform: scale(1.03);
+}
+
+/* Cards */
+.servicos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 20px;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.facial {
+  background-image: url('../img/02.png');
+  background-color: #fbe7e7;
+  color: #000;
+}
+
+.maquiagem {
+  background-image: url('../img/03.jpg');
+  background-color: #000;
+}
+
+.outro {
+  background-image: url('../img/04.jpg');
+  background-color: #fff;
+  color: #000;
+}
+
+footer#rodape {
+  clear: both;
+}
+
+footer#rodape p {
+  text-align: center;
+  color: #f9a7a7;
+  font-size: 16px;
+}
+
+/* =============================
+   MEDIA QUERIES
+   ============================= */
+   @media screen and (min-width: 768px) and (max-width: 992px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    nav ul {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .hero {
+      flex-direction: column;
+      padding: 40px 20px;
+      text-align: center;
+    }
+  
+    .texto-hero h1 {
+      font-size: 60px;
+      margin-left: 0;
+      text-align: center;
+    }
+
+    .texto-hero p {
+      font-size: 24px;
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .imagem-hero img {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+  
+    .servicos {
+      padding: 20px;
+      gap: 15px;
+    }
+  
+    .card {
+      width: 180px;
+      height: 180px;
+      font-size: 18px;
+    }
+  
+    footer#rodape p {
+      font-size: 15px;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    header {
+      padding: 20px 80px;
+    }
+  
+    nav ul {
+      gap: 40px;
+    }
+  
+    .hero {
+      flex-direction: row;
+      padding: 60px 100px;
+    }
+  
+    .texto-hero h1 {
+      font-size: 80px;
+      margin-left: 230px;
+      text-align: left;
+    }
+  
+    .texto-hero p {
+      font-size: 30px;
+      margin-left: 170px;
+      text-align: left;
+    }
+  
+    .imagem-hero img {
+      max-width: 480px;
+    }
+  
+    .servicos {
+      padding: 40px 80px;
+      gap: 20px;
+    }
+  
+    .card {
+      width: 200px;
+      height: 200px;
+      font-size: 20px;
+    }
+  
+    footer#rodape p {
+      font-size: 16px;
+    }
+   }
