@@ -74,7 +74,7 @@ nav ul .active {
 .redes-sociais i {
   margin-left: 15px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   transition: transform 0.3s ease;
 }
 
@@ -130,161 +130,237 @@ nav ul .active {
 }
 
 /* Cards */
-.servicos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 40px;
-  gap: 20px;
+   #servicos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    gap: 30px;
 }
 
 .card {
-  width: 200px;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  font-weight: bold;
-  font-size: 20px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: 230px;
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
+/* Formatação da Legenda */
+.card .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-shadow: none;
+}
+
+
+/* Fundos das Imagens e Cores das Legendas */
+
 .facial {
-  background-image: url('../img/02.png');
-  background-color: #fbe7e7;
-  color: #000;
+    background-image: url('../img/02.png');
+}
+.facial .caption {
+    background-color: #f9a7a7;
 }
 
 .maquiagem {
-  background-image: url('../img/03.jpg');
-  background-color: #000;
+    background-image: url('../img/03.jpg');
+}
+.maquiagem .caption {
+    background-color: #000000;
 }
 
-.outro {
-  background-image: url('../img/04.jpg');
-  background-color: #fff;
-  color: #000;
+.outro { 
+    background-image: url('../img/04.jpg');
+}
+.outro .caption {
+    background-color: #f9a7a7;
 }
 
 footer#rodape {
   clear: both;
+  background-color: #f9a7a7;
+  padding: 20px 0px;
 }
 
 footer#rodape p {
   text-align: center;
-  color: #f9a7a7;
+  color: #fff;
   font-size: 16px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
+
 
 /* =============================
    MEDIA QUERIES
    ============================= */
-   @media screen and (min-width: 768px) and (max-width: 992px) {
+
+   @media screen and (max-width: 767px) {
     header {
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      text-align: center;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
     }
-  
+
     nav ul {
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
     }
 
     .hero {
-      flex-direction: column;
-      padding: 40px 20px;
-      text-align: center;
+        flex-direction: column;
+        padding: 40px 20px;
     }
-  
+
     .texto-hero h1 {
+        font-size: 50px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .texto-hero p {
+        font-size: 20px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .imagem-hero img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    #servicos {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        height: 180px;
+    }
+
+    .card .caption {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    footer#rodape p {
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  header {
+      flex-direction: column;
+      padding: 30px;
+  }
+
+  nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+  }
+
+  .hero {
+      flex-direction: column;
+      padding: 50px 30px;
+  }
+
+  .texto-hero h1 {
       font-size: 60px;
       margin-left: 0;
       text-align: center;
-    }
+  }
 
-    .texto-hero p {
+  .texto-hero p {
       font-size: 24px;
       margin-left: 0;
       text-align: center;
-    }
-  
-    .imagem-hero img {
-      max-width: 100%;
-      margin-top: 20px;
-    }
-  
-    .servicos {
-      padding: 20px;
-      gap: 15px;
-    }
-  
-    .card {
-      width: 180px;
-      height: 180px;
-      font-size: 18px;
-    }
-  
-    footer#rodape p {
-      font-size: 15px;
-    }
   }
-  
-  @media screen and (min-width: 992px) {
-    header {
-      padding: 20px 80px;
-    }
-  
-    nav ul {
-      gap: 40px;
-    }
-  
-    .hero {
+
+  .imagem-hero img {
+      max-width: 100%;
+      margin-top: 25px;
+  }
+
+  #servicos {
+      padding: 30px;
+      gap: 25px;
+  }
+
+  .card {
+      width: 200px;
+      height: 200px;
+  }
+
+  .card .caption {
+      font-size: 15px;
+      padding: 11px 0;
+  }
+
+  footer#rodape p {
+      font-size: 15px;
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+  .hero {
       flex-direction: row;
-      padding: 60px 100px;
-    }
-  
-    .texto-hero h1 {
+      padding: 60px 80px;
+      text-align: left;
+  }
+
+  .texto-hero h1 {
       font-size: 80px;
       margin-left: 230px;
       text-align: left;
-    }
-  
-    .texto-hero p {
+  }
+
+  .texto-hero p {
       font-size: 30px;
       margin-left: 170px;
-      text-align: left;
-    }
-  
-    .imagem-hero img {
-      max-width: 480px;
-    }
-  
-    .servicos {
+  }
+
+  #servicos {
       padding: 40px 80px;
-      gap: 20px;
-    }
-  
-    .card {
-      width: 200px;
-      height: 200px;
-      font-size: 20px;
-    }
-  
-    footer#rodape p {
+      gap: 30px;
+  }
+
+  .card {
+      width: 230px;
+      height: 230px;
+  }
+
+  .card .caption {
       font-size: 16px;
-    }
-   }
+      padding: 12px 0;
+  }
+
+  footer#rodape p {
+      font-size: 16px;
+  }
+}
