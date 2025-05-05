@@ -22,10 +22,11 @@ body {
 }
 
 p {
-    font-size: 23px;
+    font-size: 33px;
     color: #f8b7c2;
     font-family: 'pacifico', cursive;
-    margin: 0; 
+    margin: 0;
+    text-align: center;
 }
 
 ul#album-fotos {

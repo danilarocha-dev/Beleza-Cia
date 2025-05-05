@@ -66,9 +66,48 @@ nav ul li a:hover {
   color: #f9a7a7;
 }
 
-nav ul .active {
+/*active*/
+.menu-navegacao {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.menu-navegacao ul {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+.menu-navegacao .menu-item {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-navegacao .menu-item a {
+  padding: 8px 16px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-navegacao .menu-item a:hover {
   color: #f9a7a7;
-  border-bottom: 2px solid #f9a7a7;
+}
+
+.nav-indicator {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid #f9a7a7;
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .redes-sociais i {
