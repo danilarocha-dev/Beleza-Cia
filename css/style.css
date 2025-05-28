@@ -71,7 +71,7 @@ nav ul li a:hover {
   position: relative;
   display: flex;
   gap: 20px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .menu-navegacao ul {
@@ -98,23 +98,33 @@ nav ul li a:hover {
   color: #f9a7a7;
 }
 
+.menu-navegacao .menu-item.active a {
+  color: #f9a7a7; /* Cor do texto do item ativo */
+}
+
+
 .nav-indicator {
   position: absolute;
-  width: 100px;
-  height: 40px;
   background-color: transparent;
   border: 2px solid #f9a7a7;
   border-radius: 25px;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease;
   z-index: 0;
   pointer-events: none;
+  opacity: 0;     /* Começa invisível, JS controla a visibilidade */
+                 /* width, height, top, left serão definidos dinamicamente pelo JavaScript */
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 15px;
 }
 
 .redes-sociais i {
-  margin-left: 15px;
-  cursor: pointer;
-  font-size: 20px;
-  transition: transform 0.3s ease;
+   cursor: pointer;
+   font-size: 25px;
+   color: #333;
+   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .redes-sociais i:hover {
@@ -135,6 +145,8 @@ nav ul li a:hover {
 
 .texto-hero {
   max-width: 900px;
+  flex-basis: 50%; /* Para ocupar metade do espaço em telas maiores */
+  padding-right: 20px; /* Espaçamento caso a imagem fique ao lado */
 }
 
 .texto-hero h1 {
@@ -153,7 +165,7 @@ nav ul li a:hover {
 .texto-hero p {
   font-size: 30px;
   color: #f8b7c2;
-  font-family: 'pacifico', cursive;
+  font-family: 'Pacifico', cursive;
   margin-top: 10px;
   margin-left: 170px;
 }
@@ -169,11 +181,11 @@ nav ul li a:hover {
 }
 
 /* Cards */
-   #servicos {
+ #servicos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 40px;
+    padding: 40px 20px;
     gap: 30px;
 }
 
