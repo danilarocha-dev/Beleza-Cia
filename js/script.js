@@ -8,16 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // Verifica se os elementos essenciais (indicador e ul) existem
   if (!indicator || !ul) {
       console.error("Elemento .nav-indicator ou a lista UL do menu não foram encontrados!");
-      return; // Interrompe a execução se não encontrar os elementos
+      return;
   }
 
   const currentPath = window.location.pathname; // Pega o caminho da URL atual
-  let activeItem = null; // Variável para armazenar o item de menu ativo
+  let activeItem = null;
 
   // Itera sobre cada item do menu para encontrar o que corresponde à página atual
   menuItems.forEach(item => {
       item.classList.remove('active'); // Remove a classe 'active' de todos os itens inicialmente
-      const link = item.querySelector('a'); // Pega o link dentro do item de menu
+      const link = item.querySelector('a');
 
       if (link) {
           const linkHref = link.getAttribute('href'); // Pega o atributo href do link
@@ -65,63 +65,80 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   }
 
-  // Adiciona um ouvinte de evento de clique para cada item do menu
-  menuItems.forEach(item => {
-      item.addEventListener('click', function(event) {
-          const link = this.querySelector('a');
-          // Se for um link do tipo "#" (ex: "Agende Online")
-          if (link && link.getAttribute('href') === '#') {
-              event.preventDefault(); // Previne o comportamento padrão do link (não rolar a página)
-              
-              // Remove a classe 'active' de todos os outros itens
-              menuItems.forEach(i => i.classList.remove('active'));
-              // Adiciona 'active' ao item clicado
-              this.classList.add('active');
-              // Atualiza a posição do indicador para o item clicado
-              updateIndicator(this, indicator, ul);
-          }
-          // Para links normais, a página irá recarregar, e o 'DOMContentLoaded'
-          // no início do script cuidará de definir o estado ativo na nova página.
-          // Um update visual imediato pode ser feito aqui, mas é opcional:
-          // else {
-          //    menuItems.forEach(i => i.classList.remove('active'));
-          //    this.classList.add('active');
-          //    updateIndicator(this, indicator, ul);
-          // }
-      });
-  });
+ // Adiciona os eventos para cada item do menu
+ menuItems.forEach(item => {
+    // Evento de CLIQUE (lógica existente)
+    item.addEventListener('click', function(event) {
+        const link = this.querySelector('a');
+        if (link && link.getAttribute('href') === '#') {
+            event.preventDefault(); 
+            
+            if (activeItem) { // Remove 'active' do item anteriormente ativo
+                activeItem.classList.remove('active');
+            }
+            menuItems.forEach(i => i.classList.remove('active')); // Garante que só um esteja ativo
+
+            this.classList.add('active');
+            activeItem = this; // ATUALIZA QUAL ITEM É O ATIVO PERMANENTE
+            updateIndicator(this, indicator, ul);
+        }
+        // Para links normais, a página irá recarregar e o 'DOMContentLoaded'
+        // cuidará de definir o estado ativo. Se quiser um update visual imediato antes do recarregamento:
+        // else if (link) { // Se não for link "#" mas for um link válido
+        //    if (activeItem) {
+        //        activeItem.classList.remove('active');
+        //    }
+        //    menuItems.forEach(i => i.classList.remove('active'));
+        //    this.classList.add('active');
+        //    activeItem = this;
+        //    updateIndicator(this, indicator, ul);
+        // }
+    });
+
+    // ---- ADIÇÃO: Evento para quando o MOUSE ENTRA no item ----
+    item.addEventListener('mouseenter', function() {
+        // Move o indicador para o item onde o mouse está
+        updateIndicator(this, indicator, ul);
+    });
+
+    // ---- ADIÇÃO: Evento para quando o MOUSE SAI do item ----
+    item.addEventListener('mouseleave', function() {
+        // Move o indicador de volta para o 'activeItem'
+        // (que é o item da página atual ou o último item "#" clicado)
+        // Se nenhum item estiver realmente ativo (ex: página não está no menu e não há fallback),
+        // o updateIndicator vai esconder o indicador.
+        if (activeItem) {
+            updateIndicator(activeItem, indicator, ul);
+        } else {
+            indicator.style.opacity = '0'; // Esconde se não houver item ativo para retornar
+        }
+    });
+});
 });
 
 /**
 * Atualiza a posição e o tamanho do indicador do menu.
-* @param {HTMLElement} activeItem - O item de menu atualmente ativo.
-* @param {HTMLElement} indicator - O elemento DOM do indicador.
-* @param {HTMLElement} ul - O elemento UL que contém os itens do menu.
+* @param {HTMLElement} currentHoverOrActiveItem - O item de menu para onde o indicador deve ir.
+* @param {HTMLElement} indicatorEl - O elemento DOM do indicador.
+* @param {HTMLElement} ulEl - O elemento UL que contém os itens do menu.
 */
-function updateIndicator(activeItem, indicator, ul) {
-  if (activeItem && indicator && ul) {
-      // Verifica se o item ativo tem dimensões (pode não ter se estiver oculto)
-      if (activeItem.offsetWidth === 0 && activeItem.offsetHeight === 0) {
-          // Se o item não tiver dimensões, aguarda um instante e tenta novamente.
-          // Isso pode acontecer se o CSS ainda não foi totalmente aplicado.
-          setTimeout(() => updateIndicator(activeItem, indicator, ul), 50);
-          return;
-      }
+function updateIndicator(currentHoverOrActiveItem, indicatorEl, ulEl) {
+if (currentHoverOrActiveItem && indicatorEl && ulEl) {
+    if (currentHoverOrActiveItem.offsetWidth === 0 && currentHoverOrActiveItem.offsetHeight === 0) {
+        setTimeout(() => updateIndicator(currentHoverOrActiveItem, indicatorEl, ulEl), 50);
+        return;
+    }
 
-      const paddingX = 10; // Espaçamento horizontal extra para o indicador
-      const paddingY = 6;  // Espaçamento vertical extra para o indicador
-      
-      // Define a largura do indicador um pouco maior que o item ativo
-      indicator.style.width = `${activeItem.offsetWidth + paddingX}px`;
-      // Define a posição esquerda do indicador, considerando o offset do UL e do item, e o padding
-      indicator.style.left = `${ul.offsetLeft + activeItem.offsetLeft - (paddingX / 2)}px`;
-      // Define a posição superior do indicador
-      indicator.style.top = `${ul.offsetTop + activeItem.offsetTop - (paddingY / 2)}px`;
-      // Define a altura do indicador
-      indicator.style.height = `${activeItem.offsetHeight + paddingY}px`;
-      
-      indicator.style.opacity = '1'; // Torna o indicador visível
-  } else if (indicator) {
-      indicator.style.opacity = '0'; // Esconde o indicador se não houver item ativo
-  }
+    const paddingX = 10; 
+    const paddingY = 6;  
+    
+    indicatorEl.style.width = `${currentHoverOrActiveItem.offsetWidth + paddingX}px`;
+    indicatorEl.style.left = `${ulEl.offsetLeft + currentHoverOrActiveItem.offsetLeft - (paddingX / 2)}px`;
+    indicatorEl.style.top = `${ulEl.offsetTop + currentHoverOrActiveItem.offsetTop - (paddingY / 2)}px`;
+    indicatorEl.style.height = `${currentHoverOrActiveItem.offsetHeight + paddingY}px`;
+    
+    indicatorEl.style.opacity = '1'; 
+} else if (indicatorEl) {
+    indicatorEl.style.opacity = '0'; 
+}
 }
