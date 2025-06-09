@@ -9,176 +9,96 @@ body {
 }
 
 .hero {
-    flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 40px;
+    align-items: flex-start;
     background: linear-gradient(to right, #fce4ec, #ffffff);
-    flex-wrap: wrap;
-    min-height: calc(100vh - 130px);
-    margin-top: 0;
-    margin-bottom: 28px;
+    padding: 60px 20px;
 }
 
-p {
+.conteudo-servicos {
+    max-width: 1200px;
+    width: 100%;
+    display: flex; /* Adicionado para organizar os parágrafos e a lista */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.section-subtitle {
+    font-size: 28px;
+    color: #f8b7c2;
+    font-family: 'Pacifico', cursive; /* Corrigido para 'Pacifico' */
+    margin: 0 0 40px 0; /* Ajustado a margem inferior */
+    text-align: center;
+    max-width: 800px; /* Limita a largura para melhor leitura */
+}
+
+/*p {
     font-size: 33px;
     color: #f8b7c2;
     font-family: 'pacifico', cursive;
     margin: 0;
     text-align: center;
-}
+}*/
 
+/* Galeria */
 ul#album-fotos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 50px; 
-    justify-content: center;
-    padding: 50px 20px;
+    display: flex; 
+    flex-direction: column; /* Alterado para coluna para que os itens fiquem um abaixo do outro */
+    align-items: center; /* Centraliza os itens na lista */
+    gap: 40px; /* Aumentado o espaço entre os itens */
     list-style: none; 
-    margin: 0 auto;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Garante que a lista ocupe toda a largura disponível */
 }
 
-/*Cards*/
-ul#album-fotos li {
-    width: 200px;
-    height: 200px;
-    margin: 15px;
-    border: 3px solid #f9a7a7;
-    background-color: #f9a7a7;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+/* Item de Serviço (que contém a imagem e a legenda) */
+.servico-item {
+    display: flex; /* Usa flexbox para a imagem e o texto */
+    background-color: #ffffff; /* Fundo branco para os itens */
     border-radius: 10px;
-    -webkit-transition: all .4s ease-in;
+    padding: 20px; /* Aumentado o padding */
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Ajustado a sombra */
+    width: 90%; /* Define uma largura para os itens */
+    max-width: 800px; /* Limita a largura máxima para os itens */
+    align-items: center; /* Centraliza a imagem e o texto verticalmente */
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
-/*formatação legenda da foto*/
-ul#album-fotos li span {
-    opacity: 0;
-    color: #ffffff;
-    text-shadow: 1px 1px 1px #000000;
-    background-color: rgba(0, 0, 0,.4);
-    font-size: 10pt;
-    line-height: 360px;
-    padding: 6px;
-    border-radius: 5px;
-    transition: opacity 0.3s ease;
+/* Imagens */
+.servico-item img {
+     width: 250px; /* Largura da imagem */
+    height: 250px; /* Altura da imagem */
+    object-fit: cover; 
+    border-radius: 10px; /* Borda arredondada para a imagem */
+    margin-right: 30px; /* Espaçamento entre a imagem e o texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra à imagem */
 }
 
-/*Formatação para ampliar a foto*/
-ul#album-fotos li:hover {
-   -webkit-transform: scale(1.5);
+/* Container do texto */
+.servico-texto {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
 }
 
-ul#album-fotos li:hover span {
-    opacity: 1;
+/* Legendas */
+.servico-item span {
+    color: #f8b7c2; /* Cor do texto da legenda */
+    font-size: 2.2em; /* Tamanho da fonte da legenda */
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 10px; /* Espaçamento abaixo da legenda */
+    line-height: 1.2; /* Altura da linha para a legenda */
 }
 
-/*adicionando as imagens e formatando ás*/
-ul#album-fotos li#foto05 {
-    background: url(../img/05.jpg) no-repeat center center;
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: #ffffff;
-}
-
-/*adicionando efeito zoom na imagem*/
-ul#album-fotos li#foto05:hover {
-    background-position: 0px 0px;
-    background-size: 200px 200px;
-
-}
-
-ul#album-fotos li#foto06 {
-    background: url(../img/06.jpeg) no-repeat center center;
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: #ffffff;
-}
-
-ul#album-fotos li#foto06:hover {
-    background-position: 0px 0px;
-    background-size: 200px 200px;
-
-}
-
-ul#album-fotos li#foto07 {
-    background: url(../img/07.jpg) no-repeat center center;
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: #ffffff;
-}
-
-ul#album-fotos li#foto07:hover {
-    background-position: 0px 0px;
-    background-size: 200px 200px;
-
-}
-
-ul#album-fotos li#foto08 {
-    background: url(../img/08.jpg) no-repeat center center;
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: #ffffff;
-}
-
-ul#album-fotos li#foto08:hover {
-    background-position: 0px 0px;
-    background-size: 200px 200px;
-
-}
-
-ul#album-fotos li#foto09 {
-    background: url(../img/09.png) no-repeat center center;
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: #ffffff;
-}
-
-ul#album-fotos li#foto09:hover {
-    background-position: 0px 0px;
-    background-size: 200px 200px;
-
-}
-
-ul#album-fotos li#foto10 {
-    background: url(../img/10.png) no-repeat center center;
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: #ffffff;
-}
-
-ul#album-fotos li#foto10:hover {
-    background-position: 0px 0px;
-    background-size: 200px 200px;
-
-}
-
-ul#album-fotos li#foto11 {
-    background: url(../img/11.png) no-repeat center center;
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: #ffffff;
-}
-
-ul#album-fotos li#foto11:hover {
-    background-position: 0px 0px;
-    background-size: 200px 200px;
-
-}
-
-ul#album-fotos li#foto12 {
-    background: url(../img/12.jpg) no-repeat center center;
-    background-position: 50% 50%;
-    background-size: 400px 400px;
-    background-color: #ffffff;
-}
-
-ul#album-fotos li#foto12:hover {
-    background-position: 0px 0px;
-    background-size: 200px 200px;
-
+/* Textos explicativos */
+.servico-item p {
+    color: #555; /* Cor do texto explicativo */
+    font-size: 1.1em; /* Tamanho da fonte do texto explicativo */
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0; /* Remove margem padrão do parágrafo */
 }
 
 footer#rodape p {
@@ -187,4 +107,59 @@ footer#rodape p {
     font-family: 'Segoe UI', sans-serif;
     font-size: 16px;
     margin: 0;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .servico-item {
+        flex-direction: column; /* Empilha a imagem e o texto em telas menores */
+        text-align: center; /* Centraliza o texto */
+        width: 95%;
+    }
+
+    .servico-item img {
+        margin-right: 0; /* Remove margem lateral */
+        margin-bottom: 20px; /* Adiciona margem inferior */
+        width: 200px; /* Ajusta o tamanho da imagem em telas menores */
+        height: 200px; /* Ajusta o tamanho da imagem em telas menores */
+    }
+
+    .servico-item span {
+        font-size: 1.8em; /* Ajusta o tamanho da fonte da legenda */
+    }
+
+    .servico-item p {
+        font-size: 1em; /* Ajusta o tamanho da fonte do texto explicativo */
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-subtitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .servico-item img {
+        width: 150px; /* Ajusta ainda mais o tamanho da imagem */
+        height: 150px;
+    }
+
+    .servico-item span {
+        font-size: 1.5em;
+    }
+
+    .servico-item p {
+        font-size: 0.9em;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
 }
