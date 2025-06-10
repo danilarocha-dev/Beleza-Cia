@@ -13,88 +13,103 @@ body {
     justify-content: center;
     align-items: flex-start;
     background: linear-gradient(to right, #fce4ec, #ffffff);
-    padding: 60px 20px;
+    padding: 20px 20px;
 }
 
 .conteudo-servicos {
     max-width: 1200px;
     width: 100%;
-    display: flex; /* Adicionado para organizar os parágrafos e a lista */
-    flex-direction: column; /* Organiza os itens em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .section-subtitle {
     font-size: 28px;
     color: #f8b7c2;
-    font-family: 'Pacifico', cursive; /* Corrigido para 'Pacifico' */
-    margin: 0 0 40px 0; /* Ajustado a margem inferior */
-    text-align: center;
-    max-width: 1850px; /* Limita a largura para melhor leitura */
-}
-
-/* Bloco com imagem à esquerda e texto à direita */
-.servico-item.left {
-    flex-direction: row;
-}/*ficar de olho nesse*/
-
-/* Bloco com imagem à direita e texto à esquerda */
-.servico-item.right {
-    flex-direction: row-reverse;
-    text-align: right;
-}/*acrescentei esse*/
-
-.servico-item.right .servico-texto {
-    align-items: flex-end;
-}
-
-/* Estilo do texto dos serviços */
-.servico-texto {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: 500px;
-}
-
-
-/* Item de Serviço (que contém a imagem e a legenda) */
-.servico-item {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-/* Imagens */
-.servico-item img {
-    width: 450px; /* Largura da imagem */
-    height: 450px; /* Altura da imagem */
-    border-radius: 12px; /* Borda arredondada para a imagem */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra à imagem */
-}
-
-/* Container do texto */
-.servico-texto {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
-}
-
-/* Legendas */
-.servico-item span {
-    color: #f8b7c2; /* Cor do texto da legenda */
-    font-size: 2.2em; /* Tamanho da fonte da legenda */
-    font-weight: bold;
     font-family: 'Pacifico', cursive;
-    margin-bottom: 10px; /* Espaçamento abaixo da legenda */
-    line-height: 1.2; /* Altura da linha para a legenda */
+    margin: 0 0 40px 0;
+    text-align: center;
+    width: 90%; /* Alterei de max-width para width para ocupar mais espaço */
 }
 
-/* Textos explicativos */
-.servico-item p {
-    color: #555; /* Cor do texto explicativo */
-    font-size: 1.1em; /* Tamanho da fonte do texto explicativo */
+/* Novo container para os cards de serviço */
+.servicos-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Espaço entre os cards */
+}
+
+/* Estilo para cada card de serviço */
+.servico-card {
+    display: flex;
+    align-items: center;/* ---------------*/
+    gap: 30px;
+    max-width: 1900px; /* Largura máxima para cada card*/
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Posicionamento dos cards: Imagem à Esquerda */
+.servico-card.left {
+    flex-direction: row; /* Imagem à esquerda, texto à direita */
+}
+
+/* Posicionamento dos cards: Imagem à Direita */
+.servico-card.right {
+    flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
+    text-align: right; /* Alinha o texto à direita para este card */
+}
+
+.servico-card.right .servico-info {
+    align-items: flex-end; /* Alinha o conteúdo do texto à direita */
+}
+
+/* Estilo do novo wrapper da imagem */
+.servico-imagem-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Garante que a imagem se ajuste ao border-radius */
+    display: flex; /* Para centralizar a imagem dentro do wrapper se ela for menor */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo da imagem dentro do wrapper */
+.servico-imagem-wrapper img {
+    width: 550px; /* Largura da imagem, como no original */
+    height: 550px; /* Altura da imagem, como no original */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 0; /* Remove o border-radius da imagem para que o do wrapper seja o que importa */
+    box-shadow: none;
+}
+
+/* Container do texto dentro do card */
+.servico-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    flex-grow: 1;
+    justify-content: center;
+    margin-top: -300px; /* Ajuste este valor conforme necessário para subir mais ou menos */
+}
+
+/* Título do serviço (h3) */
+.servico-info h3 {
+    color: #f8b7c2;
+    font-size: 2.0em; 
+    font-family: 'Pacifico', cursive;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+/* Texto explicativo do serviço (parágrafo) */
+.servico-info p {
+    color: #555;
+    font-size: 1.1em;
     font-family: 'Segoe UI', sans-serif;
-    margin: 0; /* Remove margem padrão do parágrafo */
+    margin: 0;
 }
 
 footer#rodape p {
@@ -105,57 +120,77 @@ footer#rodape p {
     margin: 0;
 }
 
-/* Media Queries para responsividade */
+@media (max-width: 992px) {
+    .servico-card {
+        max-width: 700px;
+        gap: 20px;
+    }
+
+    .servico-imagem-wrapper,
+    .servico-imagem-wrapper img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .servico-info h3 {
+        font-size: 1.8em;
+    }
+
+    .servico-info p {
+        font-size: 1em;
+    }
+}
+
+
 @media (max-width: 768px) {
-    .servico-item {
-        flex-direction: column; /* Empilha a imagem e o texto em telas menores */
-        text-align: center; /* Centraliza o texto */
+    .servico-card {
+        flex-direction: column;
+        text-align: center; 
         width: 95%;
+        padding: 10px;
     }
 
-    .servico-item img {
-        margin-right: 0; /* Remove margem lateral */
-        margin-bottom: 20px; /* Adiciona margem inferior */
-        width: 200px; /* Ajusta o tamanho da imagem em telas menores */
-        height: 200px; /* Ajusta o tamanho da imagem em telas menores */
+    .servico-card.right .servico-info {
+        align-items: center;
     }
 
-    .servico-item span {
-        font-size: 1.8em; /* Ajusta o tamanho da fonte da legenda */
+    .servico-imagem-wrapper,
+    .servico-imagem-wrapper img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 20px;
     }
 
-    .servico-item p {
-        font-size: 1em; /* Ajusta o tamanho da fonte do texto explicativo */
+    .servico-info h3 {
+        font-size: 1.8em;
     }
 
-    .section-title {
-        font-size: 28px;
+    .servico-info p {
+        font-size: 1em;
     }
 
     .section-subtitle {
-        font-size: 18px;
+        font-size: 22px;
+        max-width: 90%;
     }
 }
 
 @media (max-width: 480px) {
-    .servico-item img {
-        width: 150px; /* Ajusta ainda mais o tamanho da imagem */
-        height: 150px;
+    .servico-imagem-wrapper,
+    .servico-imagem-wrapper img {
+        width: 200px;
+        height: 200px;
     }
 
-    .servico-item span {
+    .servico-info h3 {
         font-size: 1.5em;
     }
 
-    .servico-item p {
+    .servico-info p {
         font-size: 0.9em;
     }
 
-    .section-title {
-        font-size: 24px;
-    }
-
     .section-subtitle {
-        font-size: 16px;
+        font-size: 18px;
     }
 }
