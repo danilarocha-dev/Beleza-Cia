@@ -23,56 +23,52 @@ body {
     flex-direction: column; /* Organiza os itens em coluna */
     align-items: center; /* Centraliza os itens horizontalmente */
 }
-
 .section-subtitle {
     font-size: 28px;
     color: #f8b7c2;
     font-family: 'Pacifico', cursive; /* Corrigido para 'Pacifico' */
     margin: 0 0 40px 0; /* Ajustado a margem inferior */
     text-align: center;
-    max-width: 800px; /* Limita a largura para melhor leitura */
+    max-width: 1850px; /* Limita a largura para melhor leitura */
 }
 
-/*p {
-    font-size: 33px;
-    color: #f8b7c2;
-    font-family: 'pacifico', cursive;
-    margin: 0;
-    text-align: center;
-}*/
+/* Bloco com imagem à esquerda e texto à direita */
+.servico-item.left {
+    flex-direction: row;
+}/*ficar de olho nesse*/
 
-/* Galeria */
-ul#album-fotos {
-    display: flex; 
-    flex-direction: column; /* Alterado para coluna para que os itens fiquem um abaixo do outro */
-    align-items: center; /* Centraliza os itens na lista */
-    gap: 40px; /* Aumentado o espaço entre os itens */
-    list-style: none; 
-    padding: 0;
-    margin: 0;
-    width: 100%; /* Garante que a lista ocupe toda a largura disponível */
+/* Bloco com imagem à direita e texto à esquerda */
+.servico-item.right {
+    flex-direction: row-reverse;
+    text-align: right;
+}/*acrescentei esse*/
+
+.servico-item.right .servico-texto {
+    align-items: flex-end;
 }
+
+/* Estilo do texto dos serviços */
+.servico-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 500px;
+}
+
 
 /* Item de Serviço (que contém a imagem e a legenda) */
 .servico-item {
-    display: flex; /* Usa flexbox para a imagem e o texto */
-    background-color: #ffffff; /* Fundo branco para os itens */
-    border-radius: 10px;
-    padding: 20px; /* Aumentado o padding */
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Ajustado a sombra */
-    width: 90%; /* Define uma largura para os itens */
-    max-width: 800px; /* Limita a largura máxima para os itens */
-    align-items: center; /* Centraliza a imagem e o texto verticalmente */
-    text-align: left; /* Alinha o texto à esquerda */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 /* Imagens */
 .servico-item img {
-     width: 250px; /* Largura da imagem */
-    height: 250px; /* Altura da imagem */
-    object-fit: cover; 
-    border-radius: 10px; /* Borda arredondada para a imagem */
-    margin-right: 30px; /* Espaçamento entre a imagem e o texto */
+    width: 450px; /* Largura da imagem */
+    height: 450px; /* Altura da imagem */
+    border-radius: 12px; /* Borda arredondada para a imagem */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra à imagem */
 }
 
