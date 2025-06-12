@@ -1,212 +1,230 @@
 @charset "UTF-8";
 
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background: linear-gradient(to right, #fce4ec, #ffffff);
-    padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(to right, #fce4ec, #ffffff);
+  padding: 20px;
 }
 
 .conteudo-servicos {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .section-subtitle {
-    font-size: 28px;
-    color: #f8b7c2;
-    font-family: 'Pacifico', cursive;
-    margin: 0 0 40px 0;
-    text-align: center;
-    width: 90%;
+  font-size: 30px;
+  color: #f8b7c2;
+  font-family: 'Pacifico', cursive;
+  margin: 0 0 40px 0;
+  text-align: center;
+  width: 90%;
 }
 
 .servicos-grid {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 110px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
 }
 
 .servico-card {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    max-width: 1950px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 40px;
-}
-
-.botao-agendar {
-    font-family: 'Segoe UI', sans-serif;
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    width: 30%;
-    height: 60px;
-    background-color: #f5a1b6d3;
-    color: #555;
-    border: none;
-    border-radius: 35px;
-    padding: 10px 20px;
-    margin-top: 40px;
-    align-self: center; /* Centraliza horizontalmente dentro do container flex */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.botao-agendar:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.349);
-    background-color: #f8b7c2;
-    color: #fff;
-    cursor: pointer;
-}
-
-.servico-card.left {
-    flex-direction: row;
-    transform: translateX(-9%);
-}
-
-.servico-card.right {
-    flex-direction: row-reverse;
-    text-align: right;
-    transform: translateX(9%);
-}
-
-.servico-card.right .servico-info {
-    align-items: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1950px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
 }
 
 .servico-imagem-wrapper {
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .servico-imagem-wrapper img {
-    width: 550px;
-    height: 550px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: none;
+  width: 550px;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: none;
 }
 
 .servico-info {
-    display: flex;
-    flex-direction: column; 
-    flex-grow: 1;
-    justify-content: center;
-    margin-top: -50px; /* Ajuste este valor conforme necessário para subir mais ou menos (h3, p botão)*/
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+  text-align: center;
 }
 
 .servico-info h3 {
-    color: #f8b7c2;
-    font-size: 2.4em; 
-    font-family: 'Pacifico', cursive;
-    margin: 0 0 10px 0;
-    line-height: 1.2;
+  color: #f8b7c2;
+  font-size: 2.4em;
+  font-family: 'Pacifico', cursive;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
 }
 
 .servico-info p {
-    color: #555;
-    font-size: 1.1em;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
+  color: #555;
+  font-size: 1.1em;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}
+
+.botao-agendar {
+  font-family: 'Segoe UI', sans-serif;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  width: 40%;
+  max-width: 300px;
+  height: 60px;
+  background-color: #f5a1b6d3;
+  color: #555;
+  border: none;
+  border-radius: 35px;
+  padding: 10px 20px;
+  margin: 20px auto 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.4s ease; 
+}
+
+.botao-agendar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.349);
+  background-color: #f8b7c2;
+  color: #fff;
+  cursor: pointer;
+}
+
+.servico-card.left {
+  flex-direction: row;
+  transform: translateX(-9%);
+}
+
+.servico-card.right {
+  flex-direction: row-reverse;
+  text-align: right;
+  transform: translateX(9%);
+}
+
+.servico-card.right .servico-info {
+  align-items: center;
+  text-align: center;
 }
 
 footer#rodape p {
-    text-align: center;
-    color: #fff;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 16px;
-    margin: 0;
+  text-align: center;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  margin: 0;
 }
 
 @media (max-width: 992px) {
-    .servico-card {
-        max-width: 700px;
-        gap: 20px;
-    }
+  .servico-card {
+    max-width: 700px;
+    gap: 20px;
+  }
 
-    .servico-imagem-wrapper,
-    .servico-imagem-wrapper img {
-        width: 300px;
-        height: 300px;
-    }
+  .servico-imagem-wrapper,
+  .servico-imagem-wrapper img {
+    width: 300px;
+    height: 300px;
+  }
 
-    .servico-info h3 {
-        font-size: 1.8em;
-    }
+  .servico-info h3 {
+    font-size: 1.8em
+  }
 
-    .servico-info p {
-        font-size: 1em;
-    }
+  .servico-info p {
+    font-size: 1em;
+  }
+
+  .botao-agendar {
+    width: 70%;
+    margin-top: 20px;
+  }
 }
 
-
 @media (max-width: 768px) {
-    .servico-card {
-        flex-direction: column;
-        text-align: center; 
-        width: 95%;
-        padding: 10px;
-    }
+  .servico-card {
+    flex-direction: column; 
+    text-align: center;
+    width: 95%;
+    padding: 10px; 
+  }
 
-    .servico-card.right .servico-info {
-        align-items: center;
-    }
+  .servico-card.right .servico-info {
+    align-items: center; 
+  }
 
-    .servico-imagem-wrapper,
-    .servico-imagem-wrapper img {
-        width: 250px;
-        height: 250px;
-        margin-bottom: 20px;
-    }
+  .servico-imagem-wrapper,
+  .servico-imagem-wrapper img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+  }
 
-    .servico-info h3 {
-        font-size: 1.8em;
-    }
+  .servico-info h3 {
+    font-size: 1.8em;
+  }
 
-    .servico-info p {
-        font-size: 1em;
-    }
+  .servico-info p {
+    font-size: 1em;
+  }
 
-    .section-subtitle {
-        font-size: 22px;
-        max-width: 90%;
-    }
+  .botao-agendar {
+    width: 80%;
+    margin: 20px auto 0 auto;
+  }
+
+  .section-subtitle {
+    font-size: 22px;
+    max-width: 90%;
+  }
 }
 
 @media (max-width: 480px) {
-    .servico-imagem-wrapper,
-    .servico-imagem-wrapper img {
-        width: 200px;
-        height: 200px;
-    }
+  .servico-imagem-wrapper,
+  .servico-imagem-wrapper img {
+    width: 200px;
+    height: 200px;
+  }
 
-    .servico-info h3 {
-        font-size: 1.5em;
-    }
+  .servico-info h3 {
+    font-size: 1.5em;
+  }
 
-    .servico-info p {
-        font-size: 0.9em;
-    }
+  .servico-info p {
+    font-size: 0.9em;
+  }
 
-    .section-subtitle {
-        font-size: 18px;
-    }
+  .section-subtitle {
+    font-size: 18px;
+  }
+
+  .botao-agendar {
+    width: 90%;
+    margin: 15px auto 0 auto;
+  }
 }
