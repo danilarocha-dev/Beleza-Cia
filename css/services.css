@@ -29,7 +29,7 @@ body {
     font-family: 'Pacifico', cursive;
     margin: 0 0 40px 0;
     text-align: center;
-    width: 90%; /* Alterei de max-width para width para ocupar mais espaço */
+    width: 90%;
 }
 
 /* Novo container para os cards de serviço */
@@ -37,74 +37,96 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 80px; /* Espaço entre os cards */
+    gap: 110px;
 }
 
 /* Estilo para cada card de serviço */
 .servico-card {
     display: flex;
-    align-items: center;/* ---------------*/
+    align-items: center;
     gap: 30px;
-    max-width: 1900px; /* Largura máxima para cada card*/
+    max-width: 1950px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px;
+}
+
+.botao-agendar {
+    font-family: 'Segoe UI', sans-serif;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    width: 30%;
+    height: 60px;
+    background-color: #f5a1b6d3;
+    color: #555;
+    border: none;
+    border-radius: 35px;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 40px;
+}
+
+.botao-agendar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.349);
+    background-color: #f8b7c2;
+    color: #fff;
+    cursor: pointer;
 }
 
 /* Posicionamento dos cards: Imagem à Esquerda */
 .servico-card.left {
-    flex-direction: row; /* Imagem à esquerda, texto à direita */
+    flex-direction: row;
+    transform: translateX(-9%); /* Move o card levemente para a esquerda */
 }
 
 /* Posicionamento dos cards: Imagem à Direita */
 .servico-card.right {
-    flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
-    text-align: right; /* Alinha o texto à direita para este card */
+    flex-direction: row-reverse;
+    text-align: right;
+    transform: translateX(9%);
 }
 
 .servico-card.right .servico-info {
-    align-items: flex-end; /* Alinha o conteúdo do texto à direita */
+    align-items: flex-end;
 }
 
 /* Estilo do novo wrapper da imagem */
 .servico-imagem-wrapper {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Garante que a imagem se ajuste ao border-radius */
-    display: flex; /* Para centralizar a imagem dentro do wrapper se ela for menor */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 /* Estilo da imagem dentro do wrapper */
 .servico-imagem-wrapper img {
-    width: 550px; /* Largura da imagem, como no original */
-    height: 550px; /* Altura da imagem, como no original */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 0; /* Remove o border-radius da imagem para que o do wrapper seja o que importa */
+    width: 550px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 15px;
     box-shadow: none;
 }
 
 /* Container do texto dentro do card */
 .servico-info {
     display: flex;
-    flex-direction: column;
-    flex-grow: 1; 
+    flex-direction: column; 
     flex-grow: 1;
     justify-content: center;
-    margin-top: -300px; /* Ajuste este valor conforme necessário para subir mais ou menos */
+    margin-top: -50px; /* Ajuste este valor conforme necessário para subir mais ou menos (h3, p botão)*/
 }
 
-/* Título do serviço (h3) */
 .servico-info h3 {
     color: #f8b7c2;
-    font-size: 2.0em; 
+    font-size: 2.4em; 
     font-family: 'Pacifico', cursive;
     margin: 0 0 10px 0;
     line-height: 1.2;
 }
 
-/* Texto explicativo do serviço (parágrafo) */
 .servico-info p {
     color: #555;
     font-size: 1.1em;
