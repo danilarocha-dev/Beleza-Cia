@@ -110,7 +110,8 @@ body {
 
 .botao-agendar:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.349);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.349));
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.349);*/
   background-color: #f8b7c2;
   color: #fff;
   cursor: pointer;

@@ -99,7 +99,7 @@ nav ul li a:hover {
 }
 
 .menu-navegacao .menu-item.active a {
-  color: #f9a7a7; /* Cor do texto do item ativo */
+  color: #f9a7a7;
 }
 
 
@@ -181,7 +181,7 @@ nav ul li a:hover {
 }
 
 /* Cards */
- #servicos {
+#servicos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -223,9 +223,7 @@ nav ul li a:hover {
     text-shadow: none;
 }
 
-
 /* Fundos das Imagens e Cores das Legendas */
-
 .facial {
     background-image: url('../img/02.png');
 }
@@ -259,11 +257,6 @@ footer#rodape p {
   font-size: 16px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
-
-
-/* =============================
-   MEDIA QUERIES
-   ============================= */
 
    @media screen and (max-width: 767px) {
     header {
