@@ -1,43 +1,37 @@
 // Garante que o script execute após o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', function () {
-  // Seleciona os itens do menu, o indicador e a lista UL
+  // --- INÍCIO: Lógica do Menu de Navegação (Original e Mantida) ---
   const menuItems = document.querySelectorAll('.menu-navegacao .menu-item');
   const indicator = document.querySelector('.menu-navegacao .nav-indicator');
   const ul = document.querySelector('.menu-navegacao ul');
 
-  // Verifica se os elementos essenciais (indicador e ul) existem
   if (!indicator || !ul) {
       console.error("Elemento .nav-indicator ou a lista UL do menu não foram encontrados!");
       return;
   }
 
-  const currentPath = window.location.pathname; // Pega o caminho da URL atual
+  const currentPath = window.location.pathname; 
   let activeItem = null;
 
-  // Itera sobre cada item do menu para encontrar o que corresponde à página atual
   menuItems.forEach(item => {
-      item.classList.remove('active'); // Remove a classe 'active' de todos os itens inicialmente
+      item.classList.remove('active'); 
       const link = item.querySelector('a');
 
       if (link) {
-          const linkHref = link.getAttribute('href'); // Pega o atributo href do link
+          const linkHref = link.getAttribute('href'); 
           let pageNameFromLink = "";
 
-          // Extrai o nome do arquivo do href (ex: "index.html", "services.html")
           if (linkHref) {
               const segments = linkHref.split('/');
               pageNameFromLink = segments[segments.length - 1];
           }
           
-          // Compara o nome do arquivo do link com o final do caminho da URL atual
           if (pageNameFromLink && currentPath.endsWith(pageNameFromLink)) {
-              activeItem = item; // Define como item ativo se houver correspondência
+              activeItem = item; 
           }
       }
   });
 
-  // Se nenhum item corresponder diretamente (ex: na raiz "/" que serve "index.html"),
-  // tenta encontrar o link para "index.html"
   if (!activeItem && (currentPath.endsWith('/') || currentPath.endsWith('index.html') || currentPath.endsWith('index'))) {
       const homeLink = Array.from(menuItems).find(item => {
           const link = item.querySelector('a');
@@ -48,69 +42,45 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   }
   
-  // Se um item ativo foi determinado pela URL, adiciona a classe 'active' e atualiza o indicador
   if (activeItem) {
       activeItem.classList.add('active');
       updateIndicator(activeItem, indicator, ul);
   } else {
-       // Se nenhum item ativo for encontrado (ex: página não listada no menu),
-       // pode-se optar por esconder o indicador ou destacar um item padrão (como "Início").
-       // Aqui, vamos tentar destacar "Início" como fallback se existir.
       const fallbackHome = Array.from(menuItems).find(item => item.querySelector('a[href*="index.html"]'));
       if(fallbackHome){
           fallbackHome.classList.add('active');
           updateIndicator(fallbackHome, indicator, ul);
       } else {
-          indicator.style.opacity = '0'; // Esconde o indicador se nenhum item estiver ativo
+          indicator.style.opacity = '0'; 
       }
   }
 
- // Adiciona os eventos para cada item do menu
  menuItems.forEach(item => {
-    // Evento de CLIQUE (lógica existente)
     item.addEventListener('click', function(event) {
         const link = this.querySelector('a');
         if (link && link.getAttribute('href') === '#') {
             event.preventDefault(); 
             
-            if (activeItem) { // Remove 'active' do item anteriormente ativo
+            if (activeItem) { 
                 activeItem.classList.remove('active');
             }
-            menuItems.forEach(i => i.classList.remove('active')); // Garante que só um esteja ativo
+            menuItems.forEach(i => i.classList.remove('active')); 
 
             this.classList.add('active');
-            activeItem = this; // ATUALIZA QUAL ITEM É O ATIVO PERMANENTE
+            activeItem = this; 
             updateIndicator(this, indicator, ul);
         }
-        // Para links normais, a página irá recarregar e o 'DOMContentLoaded'
-        // cuidará de definir o estado ativo. Se quiser um update visual imediato antes do recarregamento:
-        // else if (link) { // Se não for link "#" mas for um link válido
-        //    if (activeItem) {
-        //        activeItem.classList.remove('active');
-        //    }
-        //    menuItems.forEach(i => i.classList.remove('active'));
-        //    this.classList.add('active');
-        //    activeItem = this;
-        //    updateIndicator(this, indicator, ul);
-        // }
     });
 
-    // ---- ADIÇÃO: Evento para quando o MOUSE ENTRA no item ----
     item.addEventListener('mouseenter', function() {
-        // Move o indicador para o item onde o mouse está
         updateIndicator(this, indicator, ul);
     });
 
-    // ---- ADIÇÃO: Evento para quando o MOUSE SAI do item ----
     item.addEventListener('mouseleave', function() {
-        // Move o indicador de volta para o 'activeItem'
-        // (que é o item da página atual ou o último item "#" clicado)
-        // Se nenhum item estiver realmente ativo (ex: página não está no menu e não há fallback),
-        // o updateIndicator vai esconder o indicador.
         if (activeItem) {
             updateIndicator(activeItem, indicator, ul);
         } else {
-            indicator.style.opacity = '0'; // Esconde se não houver item ativo para retornar
+            indicator.style.opacity = '0';
         }
     });
 });
@@ -118,9 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /**
 * Atualiza a posição e o tamanho do indicador do menu.
-* @param {HTMLElement} currentHoverOrActiveItem - O item de menu para onde o indicador deve ir.
-* @param {HTMLElement} indicatorEl - O elemento DOM do indicador.
-* @param {HTMLElement} ulEl - O elemento UL que contém os itens do menu.
 */
 function updateIndicator(currentHoverOrActiveItem, indicatorEl, ulEl) {
 if (currentHoverOrActiveItem && indicatorEl && ulEl) {
@@ -142,3 +109,63 @@ if (currentHoverOrActiveItem && indicatorEl && ulEl) {
     indicatorEl.style.opacity = '0'; 
 }
 }
+// --- FIM: Lógica do Menu de Navegação ---
+
+// Aguarda o carregamento completo do DOM antes de executar qualquer código
+/*document.addEventListener('DOMContentLoaded', function () {
+    // --- Código do menu mantido, como no seu original ---
+    // ...
+
+    // --- INÍCIO: Inicialização do Swiper.js ---
+    // Garante que a biblioteca Swiper foi carregada antes de inicializar
+    if (typeof Swiper !== "undefined") {
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,        // Exibe 3 slides ao mesmo tempo
+            spaceBetween: 25,        // Espaço entre os slides
+            loop: true,              // Permite looping contínuo
+            grabCursor: true,        // Altera o cursor ao passar sobre o carrossel
+
+            autoplay: {
+                delay: 2500,         // Tempo entre os slides automáticos
+                disableOnInteraction: false
+            },
+
+            pagination: {
+                el: ".swiper-pagination", // Define o container das bolinhas
+                clickable: true           // Permite clique direto nas bolinhas
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next", // Botão de próximo slide
+                prevEl: ".swiper-button-prev"  // Botão de slide anterior
+            }
+        });
+    } else {
+        console.error("Swiper.js não foi carregado corretamente.");
+    }
+    // --- FIM: Swiper.js ---
+});*/
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3, // Exibe exatamente 3 slides
+  spaceBetween: 20, // Reduz o espaço entre os slides para evitar corte
+  centeredSlides: false, // Impede que os slides fiquem centralizados de forma errada
+  loop: true,
+  grabCursor: true,
+
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
