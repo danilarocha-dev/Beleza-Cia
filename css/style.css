@@ -37,7 +37,6 @@ header h1 {
   font-style: italic;
 }
 
-
 /*formatacao do menu*/
 nav ul { 
   list-style: none;  
@@ -182,39 +181,35 @@ nav ul li a:hover {
 
 /* Cards */
 #servicos {
-    /*display: flex;*/
     justify-content: center;
     flex-wrap: wrap;
     padding: 40px 20px;
-    gap: 25px;
 }
 
 .swiper {
-  width: 50%; /* Largura do carrossel. */
-  height: auto; /* MODIFICADO: A altura do carrossel se ajustará ao conteúdo dos slides. */
-  margin-bottom: 10px; /* Espaço na parte inferior do carrossel. */
+  max-width: 850px; /* ---- */
+  margin: 0 auto 5px auto;
+  overflow: hidden; /* ---- */
 }
 
 .swiper-slide {
-  
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Mantido para organizar texto acima da imagem */
+  flex-direction: column; /* ---- */
 
 }
 
 .card {
-    width: 230px;
-    height: 230px;
+    width: 250px;
+    height: 260px;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adiciona transição suave */
 }
 
 /* Formatação da Legenda */
@@ -225,10 +220,14 @@ nav ul li a:hover {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
+    display: flex; /*-----*/
+    align-items: center; /*-----*/
+    justify-content: center; /*-----*/
     text-align: center;
     padding: 10px 0;
     font-size: 16px;
     font-weight: bold;
+    box-sizing: border-box;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     text-shadow: none;
@@ -256,46 +255,45 @@ nav ul li a:hover {
     background-color: #f9a7a7;
 }
 
-/* acrescimos dos cards */
-.facial {
-    background-image: url('../img/02.png');
+.cortes {
+    background-image: url('../img/05.png');
 }
-.facial .caption {
+.cortes .caption {
     background-color: #f9a7a7;
 }
 
-.maquiagem {
-    background-image: url('../img/03.jpg');
+.coloracao {
+    background-image: url('../img/06.png');
 }
-.maquiagem .caption {
+.coloracao .caption {
     background-color: #000000;
 }
 
-.outro { 
-    background-image: url('../img/04.jpg');
+.escova { 
+    background-image: url('../img/07.png');
 }
-.outro .caption {
+.escova .caption {
     background-color: #f9a7a7;
 }
 
-.facial {
-    background-image: url('../img/02.png');
+.manicure {
+    background-image: url('../img/08.png');
 }
-.facial .caption {
+.manicure .caption {
     background-color: #f9a7a7;
 }
 
-.maquiagem {
-    background-image: url('../img/03.jpg');
+.hidratacao {
+    background-image: url('../img/09.png');
 }
-.maquiagem .caption {
+.hidratacao .caption {
     background-color: #000000;
 }
 
-.outro { 
-    background-image: url('../img/04.jpg');
+.penteados { 
+    background-image: url('../img/10.png');
 }
-.outro .caption {
+.penteados .caption {
     background-color: #f9a7a7;
 }
 
@@ -310,126 +308,4 @@ footer#rodape p {
   color: #fff;
   font-size: 16px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-}
-
-   /* Media Queries (Mantidos com pequenos ajustes para o Swiper) */
-@media screen and (max-width: 767px) {
-    header {
-        flex-direction: column;
-        padding: 20px;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-top: 15px;
-    }
-
-    .hero {
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-
-    .texto-hero h1 {
-        font-size: 50px;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .texto-hero p {
-        font-size: 20px;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .imagem-hero img {
-        max-width: 100%;
-        margin-top: 20px;
-    }
-
-    #servicos {
-        padding: 40px 20px; /* Ajusta o padding para a visão mobile */
-    }
-
-    .card {
-        /* A largura do card em telas pequenas é controlada pelo 'slidesPerView' do Swiper */
-        height: 250px; /* Altura ajustada para mobile */
-    }
-
-    .card .caption {
-        font-size: 14px;
-        padding: 10px 0;
-    }
-
-    footer#rodape p {
-        font-size: 14px;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  header {
-      flex-direction: column;
-      padding: 30px;
-  }
-
-  nav ul {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-  }
-
-  .hero {
-      flex-direction: column;
-      padding: 50px 30px;
-  }
-
-  .texto-hero h1 {
-      font-size: 60px;
-      margin-left: 0;
-      text-align: center;
-  }
-
-  .texto-hero p {
-      font-size: 24px;
-      margin-left: 0;
-      text-align: center;
-  }
-
-  .imagem-hero img {
-      max-width: 100%;
-      margin-top: 25px;
-  }
-
-  #servicos {
-      padding: 30px;
-  }
-
-  .card {
-      height: 200px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .hero {
-      flex-direction: row;
-      padding: 60px 80px;
-      text-align: left;
-  }
-
-  .texto-hero h1 {
-      font-size: 80px;
-      margin-left: 230px;
-      text-align: left;
-  }
-
-  .texto-hero p {
-      font-size: 30px;
-      margin-left: 170px;
-  }
-  
-  #servicos {
-      padding: 40px 80px;
-  }
 }

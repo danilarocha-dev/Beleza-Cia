@@ -148,10 +148,24 @@ if (currentHoverOrActiveItem && indicatorEl && ulEl) {
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3, // Exibe exatamente 3 slides
-  spaceBetween: 20, // Reduz o espaço entre os slides para evitar corte
+  spaceBetween: 2, // Reduz o espaço entre os slides para evitar corte
   centeredSlides: false, // Impede que os slides fiquem centralizados de forma errada
   loop: true,
   grabCursor: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,        // Para telas pequenas (mobile)
+      spaceBetween: 10
+    },
+    768: {
+      slidesPerView: 2,        // Tablets
+      spaceBetween: 20
+    },
+    992: {
+      slidesPerView: 3,        // Telas maiores (desktop)
+      spaceBetween: 20
+    }
+  },
 
   autoplay: {
     delay: 2500,
