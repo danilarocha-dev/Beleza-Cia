@@ -1,56 +1,116 @@
-/* Cards */
+/* Container geral do carrossel */
 #servicos {
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 40px 20px;
+  padding: 60px 20px;
+  background: #fff;
 }
 
+/* Container Swiper */
 .swiper {
-  max-width: 850px; /* ---- */
-  margin: 0 auto 5px auto;
-  overflow: hidden; /* ---- */
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
 }
 
+/* Slide individual */
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* ---- */
-
 }
 
+/* Card */
 .card {
-    width: 250px;
-    height: 260px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adiciona transição suave */
+  width: 260px;
+  height: 270px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Formatação da Legenda */
-.card .caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    display: flex; /*-----*/
-    align-items: center; /*-----*/
-    justify-content: center; /*-----*/
-    text-align: center;
-    padding: 10px 0;
-    font-size: 16px;
-    font-weight: bold;
-    box-sizing: border-box;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    text-shadow: none;
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
+
+/* Legenda (caption) */
+.card .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Botões Swiper customizados */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 42px;
+  height: 42px;
+  background-color: #f9a7a7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #f47878;
+  transform: scale(1.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+/* Ícones usando Font Awesome para setas */
+.swiper-button-next::before,
+.swiper-button-prev::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 18px;
+  color: #fff;
+  display: inline-block;
+}
+
+.swiper-button-next::before {
+  content: "\f105"; /* ícone → */
+}
+
+.swiper-button-prev::before {
+  content: "\f104"; /* ícone ← */
+}
+
+/* Paginação (opcional) */
+.swiper-pagination {
+  margin-top: 20px;
+  position: static;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: #f9a7a7;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f47878;
+}
+
 
 /* Fundos das Imagens e Cores das Legendas */
 .facial {

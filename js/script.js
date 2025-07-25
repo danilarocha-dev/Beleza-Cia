@@ -125,10 +125,6 @@ if (currentHoverOrActiveItem && indicatorEl && ulEl) {
             loop: true,              // Permite looping contínuo
             grabCursor: true,        // Altera o cursor ao passar sobre o carrossel
 
-            autoplay: {
-                delay: 2500,         // Tempo entre os slides automáticos
-                disableOnInteraction: false
-            },
 
             pagination: {
                 el: ".swiper-pagination", // Define o container das bolinhas
@@ -147,15 +143,34 @@ if (currentHoverOrActiveItem && indicatorEl && ulEl) {
 });*/
 
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3, // Exibe exatamente 3 slides
-  spaceBetween: 2, // Reduz o espaço entre os slides para evitar corte
-  centeredSlides: false, // Impede que os slides fiquem centralizados de forma errada
+  slidesPerView: 3,
+  spaceBetween: 24, // Reduz o espaço entre os slides para evitar corte
+  centeredSlides: false,
   loop: true,
   grabCursor: true,
+  speed: 800, // Animação de transição mais suave
+
+  autoplay: {
+    delay: 2800,
+    disableOnInteraction: false,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true // Estética visual melhor nos bullets
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
   breakpoints: {
     0: {
       slidesPerView: 1,        // Para telas pequenas (mobile)
-      spaceBetween: 10
+      spaceBetween: 16,
+      centeredSlides: true
     },
     768: {
       slidesPerView: 2,        // Tablets
@@ -163,23 +178,8 @@ var swiper = new Swiper(".mySwiper", {
     },
     992: {
       slidesPerView: 3,        // Telas maiores (desktop)
-      spaceBetween: 20
+      spaceBetween: 24
     }
-  },
-
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
   },
 });
 
