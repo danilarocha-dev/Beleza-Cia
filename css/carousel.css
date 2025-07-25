@@ -1,0 +1,117 @@
+/* Cards */
+#servicos {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.swiper {
+  max-width: 850px; /* ---- */
+  margin: 0 auto 5px auto;
+  overflow: hidden; /* ---- */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* ---- */
+
+}
+
+.card {
+    width: 250px;
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adiciona transição suave */
+}
+
+/* Formatação da Legenda */
+.card .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex; /*-----*/
+    align-items: center; /*-----*/
+    justify-content: center; /*-----*/
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-shadow: none;
+}
+
+/* Fundos das Imagens e Cores das Legendas */
+.facial {
+    background-image: url('../img/02.png');
+}
+.facial .caption {
+    background-color: #f9a7a7;
+}
+
+.maquiagem {
+    background-image: url('../img/03.jpg');
+}
+.maquiagem .caption {
+    background-color: #000000;
+}
+
+.outro { 
+    background-image: url('../img/04.jpg');
+}
+.outro .caption {
+    background-color: #f9a7a7;
+}
+
+.cortes {
+    background-image: url('../img/05.png');
+}
+.cortes .caption {
+    background-color: #f9a7a7;
+}
+
+.coloracao {
+    background-image: url('../img/06.png');
+}
+.coloracao .caption {
+    background-color: #000000;
+}
+
+.escova { 
+    background-image: url('../img/07.png');
+}
+.escova .caption {
+    background-color: #f9a7a7;
+}
+
+.manicure {
+    background-image: url('../img/08.png');
+}
+.manicure .caption {
+    background-color: #f9a7a7;
+}
+
+.hidratacao {
+    background-image: url('../img/09.png');
+}
+.hidratacao .caption {
+    background-color: #000000;
+}
+
+.penteados { 
+    background-image: url('../img/10.png');
+}
+.penteados .caption {
+    background-color: #f9a7a7;
+}
