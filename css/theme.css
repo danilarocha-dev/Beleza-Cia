@@ -1,0 +1,13 @@
+:root {
+    --cor-primaria: #f47878;
+    --cor-primaria-clara: #f9a7a7;
+    --cor-primaria-fundo: #fce4ec;
+    --cor-texto-principal: #333;
+    --cor-texto-secundario: #555;
+    --cor-fundo: #fdfdfd;
+    --cor-fundo-cabecalho: #fff;
+    --cor-borda: #ddd;
+    --cor-branco: #fff;
+    --cor-modal-fundo: rgba(0,0,0,0.6);
+}
+

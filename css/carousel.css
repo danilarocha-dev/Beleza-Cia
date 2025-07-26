@@ -1,7 +1,7 @@
 /* Container geral do carrossel */
 #servicos {
+  max-width: 1000px;
   padding: 60px 20px;
-  background: #fff;
 }
 
 /* Container Swiper */
@@ -138,21 +138,21 @@
     background-image: url('../img/05.png');
 }
 .cortes .caption {
-    background-color: #f9a7a7;
+    background-color: #000000;
 }
 
 .coloracao {
     background-image: url('../img/06.png');
 }
 .coloracao .caption {
-    background-color: #000000;
+    background-color: #f9a7a7;
 }
 
 .escova { 
     background-image: url('../img/07.png');
 }
 .escova .caption {
-    background-color: #f9a7a7;
+    background-color: #000000;
 }
 
 .manicure {

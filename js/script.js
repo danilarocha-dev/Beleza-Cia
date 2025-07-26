@@ -111,44 +111,14 @@ if (currentHoverOrActiveItem && indicatorEl && ulEl) {
 }
 // --- FIM: Lógica do Menu de Navegação ---
 
-// Aguarda o carregamento completo do DOM antes de executar qualquer código
-/*document.addEventListener('DOMContentLoaded', function () {
-    // --- Código do menu mantido, como no seu original ---
-    // ...
-
-    // --- INÍCIO: Inicialização do Swiper.js ---
-    // Garante que a biblioteca Swiper foi carregada antes de inicializar
-    if (typeof Swiper !== "undefined") {
-        const swiper = new Swiper(".mySwiper", {
-            slidesPerView: 3,        // Exibe 3 slides ao mesmo tempo
-            spaceBetween: 25,        // Espaço entre os slides
-            loop: true,              // Permite looping contínuo
-            grabCursor: true,        // Altera o cursor ao passar sobre o carrossel
-
-
-            pagination: {
-                el: ".swiper-pagination", // Define o container das bolinhas
-                clickable: true           // Permite clique direto nas bolinhas
-            },
-
-            navigation: {
-                nextEl: ".swiper-button-next", // Botão de próximo slide
-                prevEl: ".swiper-button-prev"  // Botão de slide anterior
-            }
-        });
-    } else {
-        console.error("Swiper.js não foi carregado corretamente.");
-    }
-    // --- FIM: Swiper.js ---
-});*/
-
+// --- INÍCIO: Swiper.js ---
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
-  spaceBetween: 24, // Reduz o espaço entre os slides para evitar corte
+  spaceBetween: 20, // Reduz o espaço entre os slides para evitar corte
   centeredSlides: false,
   loop: true,
   grabCursor: true,
-  speed: 800, // Animação de transição mais suave
+  speed: 900, // Animação de transição mais suave
 
   autoplay: {
     delay: 2800,
@@ -182,4 +152,5 @@ var swiper = new Swiper(".mySwiper", {
     }
   },
 });
+// --- FIM: Swiper.js ---
 
