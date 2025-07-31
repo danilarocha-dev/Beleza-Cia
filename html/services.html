@@ -9,6 +9,7 @@
     <link rel="icon" href="../img/favicon.png" type="image/png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
@@ -133,6 +134,33 @@
     </section>
 
     
+
+    <!-- Modal de Agendamento -->
+    <div id="agendamento-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Agende seu Horário</h2>
+            <form id="modal-form">
+                <input type="text" name="nome" placeholder="Nome completo" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="tel" name="telefone" placeholder="Telefone" required>
+                <select name="servico" required>
+                    <option value="" disabled selected>Selecione o Serviço</option>
+                    <option value="corte">Cortes Perfeitos</option>
+                    <option value="coloracao">Coloração e Luzes</option>
+                    <option value="escova">Escova Perfeita</option>
+                    <option value="manicure">Manicure e Pedicure</option>
+                    <option value="hidratacao">Hidratação Capilar</option>
+                    <option value="penteados">Penteados</option>
+                    <option value="sobrancelhas">Design de Sobrancelhas</option>
+                    <option value="maquiagem">Maquiagem Profissional</option>
+                </select>
+                <input type="date" name="data" required>
+                <input type="time" name="hora" required>
+                <button type="submit" class="botao-agendar-modal">Agendar</button>
+            </form>
+        </div>
+    </div>
 
     <footer id="rodape">
         <p>Copyright &copy; Danila Rocha. Todos os Direitos Reservados.</p>

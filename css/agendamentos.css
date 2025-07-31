@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .container-agendamentos {
-    padding: 40px 60px;
+    padding: 0 60px;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -20,117 +20,59 @@
     margin-bottom: 40px;
 }
 
-.lista-agendamentos {
+.kanban-board {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-.agendamento-card {
+.kanban-column {
     background-color: var(--cor-fundo-cabecalho);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 20px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
 }
 
-.agendamento-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.servico-titulo {
-    font-size: 1.2rem;
+.column-title {
+    font-size: 1.3rem;
     font-weight: bold;
-    color: var(--cor-texto-principal);
-}
-
-.status {
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 15px;
     color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-.status.agendado {
-    background-color: #5cb85c;
-}
-
-.status.concluido {
+.column-title.agendado {
     background-color: #337ab7;
 }
 
-.status.cancelado {
+.column-title.cancelado {
     background-color: #d9534f;
 }
 
-.card-body p {
+.column-title.concluido {
+    background-color: #5cb85c;
+}
+
+.column-title.reagendar {
+    background-color: #f0ad4e;
+}
+
+.agendamento-card {
+    background-color: var(--cor-branco);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.agendamento-card p {
     margin-bottom: 8px;
     color: var(--cor-texto-secundario);
 }
 
-.card-footer {
-    margin-top: 15px;
-    text-align: right;
+.agendamento-card p strong {
+    color: var(--cor-texto-principal);
 }
 
-.card-footer button {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-.btn-cancelar {
-    background-color: #d9534f;
-}
-
-.btn-cancelar:hover {
-    background-color: #c9302c;
-}
-
-.btn-reagendar {
-    background-color: #f0ad4e;
-}
-
-.btn-reagendar:hover {
-    background-color: #ec971f;
-}
-
-/* Botão Flutuante (FAB) */
-.fab {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: var(--cor-primaria);
-    border-radius: 50%;
-    border: none;
-    color: var(--cor-branco);
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.fab:hover {
-    background-color: var(--cor-primaria-clara);
-    transform: scale(1.1);
-}

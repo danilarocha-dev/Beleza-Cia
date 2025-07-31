@@ -1,0 +1,95 @@
+/* Estilos do Modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Fundo semi-transparente */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 3% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: var(--cor-primaria);
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+#modal-form input, #modal-form select {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    display: inline-block;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+#modal-form input:focus, #modal-form select:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+}
+
+.botao-agendar-modal {
+    font-family: 'Segoe UI', sans-serif;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 300px;
+    height: 60px;
+    background-color: var(--cor-botao);
+    color: var(--cor-texto-principal);
+    border: none;
+    border-radius: 35px;
+    padding: 10px 20px;
+    margin: 20px auto 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+}
+
+.botao-agendar-modal:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.349));
+    background-color: var(--cor-primaria-texto);
+    color: var(--cor-branco);
+    cursor: pointer;
+}

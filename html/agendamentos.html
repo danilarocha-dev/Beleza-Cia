@@ -38,141 +38,71 @@
             <h1>Agendamentos</h1>
             <p class="section-subtitle">Visualize e gerencie seus horários marcados.</p>
 
-            <div class="lista-agendamentos">
-                <!-- Agendamento Mockado 1 -->
-                <div class="agendamento-card">
-                    <div class="card-header">
-                        <span class="servico-titulo">Cortes Perfeitos</span>
-                        <span class="status agendado">Agendado</span>
+            <div class="kanban-board">
+                <!-- Coluna Agendados -->
+                <div class="kanban-column">
+                    <h2 class="column-title agendado">Agendados</h2>
+                    <div class="agendamento-card">
+                        <div class="card-body">
+                            <p><strong>Nome:</strong> Ana Silva</p>
+                            <p><strong>Data:</strong> 05/08/2025</p>
+                            <p><strong>Hora:</strong> 14:30</p>
+                            <p><strong>Serviço:</strong> Corte de cabelo</p>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <p><strong>Data:</strong> 05/08/2025</p>
-                        <p><strong>Hora:</strong> 14:30</p>
-                        <p><strong>Profissional:</strong> Ana Silva</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-cancelar">Cancelar</button>
-                    </div>
-                </div>
-
-                <!-- Agendamento Mockado 2 -->
-                <div class="agendamento-card">
-                    <div class="card-header">
-                        <span class="servico-titulo">Coloração e Luzes</span>
-                        <span class="status concluido">Concluído</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Data:</strong> 18/07/2025</p>
-                        <p><strong>Hora:</strong> 10:00</p>
-                        <p><strong>Profissional:</strong> Carla Souza</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-reagendar">Reagendar</button>
+                    <div class="agendamento-card">
+                        <div class="card-body">
+                            <p><strong>Nome:</strong> Carla Souza</p>
+                            <p><strong>Data:</strong> 12/08/2025</p>
+                            <p><strong>Hora:</strong> 11:00</p>
+                            <p><strong>Serviço:</strong> Manicure e Pedicure</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Agendamento Mockado 3 -->
-                <div class="agendamento-card">
-                    <div class="card-header">
-                        <span class="servico-titulo">Escova Perfeita</span>
-                        <span class="status cancelado">Cancelado</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Data:</strong> 10/07/2025</p>
-                        <p><strong>Hora:</strong> 16:00</p>
-                        <p><strong>Profissional:</strong> Ana Silva</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-reagendar">Reagendar</button>
+                <!-- Coluna Cancelados -->
+                <div class="kanban-column">
+                    <h2 class="column-title cancelado">Cancelados</h2>
+                    <div class="agendamento-card">
+                        <div class="card-body">
+                            <p><strong>Nome:</strong> Ana Silva</p>
+                            <p><strong>Data:</strong> 10/07/2025</p>
+                            <p><strong>Hora:</strong> 16:00</p>
+                            <p><strong>Serviço:</strong> Escova Perfeita</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Agendamento Mockado 4 -->
-                <div class="agendamento-card">
-                    <div class="card-header">
-                        <span class="servico-titulo">Manicure e Pedicure</span>
-                        <span class="status agendado">Agendado</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Data:</strong> 12/08/2025</p>
-                        <p><strong>Hora:</strong> 11:00</p>
-                        <p><strong>Profissional:</strong> Carla Souza</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-cancelar">Cancelar</button>
+                <!-- Coluna Concluídos -->
+                <div class="kanban-column">
+                    <h2 class="column-title concluido">Concluídos</h2>
+                    <div class="agendamento-card">
+                        <div class="card-body">
+                            <p><strong>Nome:</strong> Carla Souza</p>
+                            <p><strong>Data:</strong> 18/07/2025</p>
+                            <p><strong>Hora:</strong> 10:00</p>
+                            <p><strong>Serviço:</strong> Coloração e Luzes</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Agendamento Mockado 5 -->
-                <div class="agendamento-card">
-                    <div class="card-header">
-                        <span class="servico-titulo">Hidratação Capilar</span>
-                        <span class="status concluido">Concluído</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Data:</strong> 25/07/2025</p>
-                        <p><strong>Hora:</strong> 15:00</p>
-                        <p><strong>Profissional:</strong> Ana Silva</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-reagendar">Reagendar</button>
-                    </div>
-                </div>
-
-                <!-- Agendamento Mockado 6 -->
-                <div class="agendamento-card">
-                    <div class="card-header">
-                        <span class="servico-titulo">Penteados</span>
-                        <span class="status agendado">Agendado</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Data:</strong> 19/08/2025</p>
-                        <p><strong>Hora:</strong> 18:00</p>
-                        <p><strong>Profissional:</strong> Carla Souza</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-cancelar">Cancelar</button>
-                    </div>
-                </div>
-
-                <!-- Agendamento Mockado 7 -->
-                <div class="agendamento-card">
-                    <div class="card-header">
-                        <span class="servico-titulo">Design de Sobrancelhas</span>
-                        <span class="status cancelado">Cancelado</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Data:</strong> 01/08/2025</p>
-                        <p><strong>Hora:</strong> 09:00</p>
-                        <p><strong>Profissional:</strong> Ana Silva</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-reagendar">Reagendar</button>
-                    </div>
-                </div>
-
-                <!-- Agendamento Mockado 8 -->
-                <div class="agendamento-card">
-                    <div class="card-header">
-                        <span class="servico-titulo">Maquiagem Profissional</span>
-                        <span class="status concluido">Concluído</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Data:</strong> 28/07/2025</p>
-                        <p><strong>Hora:</strong> 13:00</p>
-                        <p><strong>Profissional:</strong> Carla Souza</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn-reagendar">Reagendar</button>
+                <!-- Coluna Reagendar -->
+                <div class="kanban-column">
+                    <h2 class="column-title reagendar">Reagendar</h2>
+                    <div class="agendamento-card">
+                        <div class="card-body">
+                            <p><strong>Nome:</strong> Ana Silva</p>
+                            <p><strong>Data:</strong> 25/07/2025</p>
+                            <p><strong>Hora:</strong> 15:00</p>
+                            <p><strong>Serviço:</strong> Hidratação Capilar</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
     </section>
 
-    <button id="fab-agendar" class="fab">
-        <i class="fas fa-plus"></i>
-    </button>
+    
 
     <footer id="rodape">
         <p>Copyright &copy; Danila Rocha. Todos os Direitos Reservados.</p>
