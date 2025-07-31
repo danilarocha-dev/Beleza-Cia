@@ -46,7 +46,7 @@
   font-size: 15px;
   font-weight: bold;
   text-align: center;
-  color: #fff;
+  color: var(--cor-branco);
   background-color: rgba(0, 0, 0, 0.6);
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
@@ -57,7 +57,7 @@
 .swiper-button-prev {
   width: 42px;
   height: 42px;
-  background-color: #f9a7a7;
+  background-color: var(--cor-primaria-clara);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -68,7 +68,7 @@
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background-color: #f47878;
+  background-color: var(--cor-primaria);
   transform: scale(1.1);
 }
 
@@ -83,7 +83,7 @@
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   font-size: 18px;
-  color: #fff;
+  color: var(--cor-branco);
   display: inline-block;
 }
 
@@ -103,12 +103,12 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: #f9a7a7;
+  background-color: var(--cor-primaria-clara);
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #f47878;
+  background-color: var(--cor-primaria);
 }
 
 
@@ -117,61 +117,61 @@
     background-image: url('../img/02.png');
 }
 .facial .caption {
-    background-color: #f9a7a7;
+    background-color: var(--cor-primaria-clara);
 }
 
 .maquiagem {
     background-image: url('../img/03.jpg');
 }
 .maquiagem .caption {
-    background-color: #000000;
+    background-color: var(--cor-carrossel-fundo-legenda);
 }
 
 .outro { 
     background-image: url('../img/04.jpg');
 }
 .outro .caption {
-    background-color: #f9a7a7;
+    background-color: var(--cor-primaria-clara);
 }
 
 .cortes {
     background-image: url('../img/05.png');
 }
 .cortes .caption {
-    background-color: #000000;
+    background-color: var(--cor-carrossel-fundo-legenda);
 }
 
 .coloracao {
     background-image: url('../img/06.png');
 }
 .coloracao .caption {
-    background-color: #f9a7a7;
+    background-color: var(--cor-primaria-clara);
 }
 
 .escova { 
     background-image: url('../img/07.png');
 }
 .escova .caption {
-    background-color: #000000;
+    background-color: var(--cor-carrossel-fundo-legenda);
 }
 
 .manicure {
     background-image: url('../img/08.png');
 }
 .manicure .caption {
-    background-color: #f9a7a7;
+    background-color: var(--cor-primaria-clara);
 }
 
 .hidratacao {
     background-image: url('../img/09.png');
 }
 .hidratacao .caption {
-    background-color: #000000;
+    background-color: var(--cor-carrossel-fundo-legenda);
 }
 
 .penteados { 
     background-image: url('../img/10.png');
 }
 .penteados .caption {
-    background-color: #f9a7a7;
+    background-color: var(--cor-primaria-clara);
 }
