@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(../css/theme.css);
 @import url(../css/carousel.css);
 @import url(../css/footer.css);
 
@@ -10,18 +11,18 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fdfdfd;
-  color: #333;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-principal);
   line-height: 1.6;
 }
 
 header {
-  background: #fff;
+  background: var(--cor-branco);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 60px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--cor-borda);
   flex-wrap: wrap;
 }
 
@@ -55,16 +56,16 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: var(--cor-texto-principal);
   transition: color 0.3s ease;
 }
 
 nav ul li:hover {
-  color: #f9a7a7;
+  color: var(--cor-primaria-clara);
 }
 
 nav ul li a:hover {
-  color: #f9a7a7;
+  color: var(--cor-primaria-clara);
 }
 
 /*active*/
@@ -96,18 +97,18 @@ nav ul li a:hover {
 }
 
 .menu-navegacao .menu-item a:hover {
-  color: #f9a7a7;
+  color: var(--cor-primaria-clara);
 }
 
 .menu-navegacao .menu-item.active a {
-  color: #f9a7a7;
+  color: var(--cor-primaria-clara);
 }
 
 
 .nav-indicator {
   position: absolute;
   background-color: transparent;
-  border: 2px solid #f9a7a7;
+  border: 2px solid var(--cor-primaria-clara);
   border-radius: 25px;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease;
   z-index: 0;
@@ -124,13 +125,13 @@ nav ul li a:hover {
 .redes-sociais i {
    cursor: pointer;
    font-size: 25px;
-   color: #333;
+   color: var(--cor-texto-principal);
    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .redes-sociais i:hover {
   transform: scale(1.2);
-  color: #f9a7a7;
+  color: var(--cor-primaria-clara);
 }
 
 /* Hero Section */
