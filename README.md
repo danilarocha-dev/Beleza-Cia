@@ -1,113 +1,97 @@
 # Beleza & Cia
 
-Este é o código-fonte de um site moderno e responsivo para um salão de beleza chamado "Beleza & Cia". O projeto foi desenvolvido com foco em uma interface de usuário elegante e interativa para apresentar os serviços oferecidos e incentivar o agendamento online.
+Bem-vinda ao repositório do **Beleza & Cia**, um site elegante e moderno para um salão de beleza, projetado para oferecer uma experiência de usuário impecável e facilitar o agendamento de serviços.
 
 ---
 
-## ✨ Funcionalidades
+## 🚀 Visão Geral do Projeto
 
-*   **Design Responsivo:** Totalmente adaptável a diferentes tamanhos de tela, de desktops a dispositivos móveis.
-*   **Página Inicial Atraente:** Com uma seção "hero" de boas-vindas e um carrossel de serviços.
-*   **Carrossel de Serviços Interativo:** Utiliza a biblioteca [Swiper.js](https://swiperjs.com/) para uma navegação fluida e automática pelos principais serviços.
-*   **Página de Serviços Detalhada:** Apresenta cada serviço com descrição, imagem e um botão para agendamento.
-*   **Menu de Navegação Dinâmico:** Um indicador visual elegante destaca o item de menu ativo ou sob o cursor, melhorando a experiência do usuário.
-*   **Ícones Modernos:** Uso do [Font Awesome](https://fontawesome.com/) para ícones de redes sociais e navegação do carrossel.
+O Beleza & Cia é mais do que um simples site institucional; é uma vitrine digital interativa. O design foi pensado para ser atraente e funcional, guiando o usuário desde a descoberta dos serviços até a conclusão do agendamento, tudo de forma intuitiva e responsiva.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## ✨ Funcionalidades Implementadas
 
-*   **HTML5:** Para a estrutura semântica do site.
-*   **CSS3:** Para estilização, layout (Flexbox) e animações.
-*   **JavaScript (ES6+):** Para a interatividade do menu de navegação e inicialização de bibliotecas.
-*   **[Swiper.js](https://swiperjs.com/):** Biblioteca para a criação do carrossel de serviços.
-*   **[Font Awesome](https://fontawesome.com/):** Biblioteca de ícones vetoriais.
+*   **Design Totalmente Responsivo:** A interface se adapta perfeitamente a qualquer dispositivo, seja desktop, tablet ou smartphone.
+*   **Página Inicial Cativante:** Uma seção "hero" com uma mensagem de boas-vindas e um carrossel dinâmico que destaca os principais serviços.
+*   **Carrossel de Serviços Interativo:** Navegação fluida e automática pelos serviços, construída com a biblioteca **Swiper.js**.
+*   **Página de Serviços Detalhada:** Layout organizado que apresenta cada serviço com imagem, descrição e um botão de ação para agendamento.
+*   **Página de Agendamentos com Kanban:** Uma interface visual no estilo Kanban para que o usuário possa acompanhar o status de seus agendamentos (Agendado, Concluído, Cancelado, etc.).
+*   **Modal de Agendamento:** Um formulário de agendamento que abre em um modal (pop-up), permitindo que o usuário agende um serviço sem sair da página atual.
+*   **Menu de Navegação com Indicador Dinâmico:** Um efeito visual que destaca o item de menu ativo, melhorando a usabilidade e a estética do site.
+*   **Ícones Modernos:** Utilização do **Font Awesome** para ícones de redes sociais e elementos de navegação.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🛠️ Tecnologias e Ferramentas
 
-O projeto está organizado da seguinte forma para facilitar a manutenção e escalabilidade:
+*   **HTML5:** Estruturação semântica e moderna.
+*   **CSS3:** Estilização avançada, com uso de **Flexbox** para layouts, animações e variáveis CSS para um tema consistente.
+*   **JavaScript (ES6+):** Manipulação do DOM e interatividade.
+*   **Dependências (via CDN):**
+    *   **Swiper.js:** Para o carrossel de serviços.
+    *   **Font Awesome:** Para a biblioteca de ícones.
+
+---
+
+## 📂 Estrutura de Arquivos
+
+O projeto é organizado de forma modular para facilitar a manutenção:
 
 ```
 beleza&cia/
 ├── css/
-│   ├── carousel.css     # Estilos específicos do carrossel
+│   ├── agendamentos.css # Estilos da página de agendamentos (Kanban)
+│   ├── carousel.css     # Estilos do carrossel Swiper
 │   ├── footer.css       # Estilos do rodapé
+│   ├── modal.css        # Estilos do modal de agendamento
 │   ├── services.css     # Estilos da página de serviços
-│   └── style.css        # Estilos globais e da página inicial
+│   ├── style.css        # Estilos globais, header e hero
+│   └── theme.css        # Variáveis CSS (paleta de cores, fontes)
 ├── html/
-│   ├── index.html       # Página inicial
-│   └── services.html    # Página de serviços
+│   ├── agendamentos.html # Página de visualização de agendamentos
+│   └── services.html    # Página de detalhes dos serviços
 ├── img/
-│   └── ...              # Imagens e ícones do projeto
+│   └── ...              # Imagens, logos e favicon
 ├── js/
-│   └── script.js        # Lógica do menu e inicialização do Swiper
+│   └── script.js        # Lógica do menu, Swiper e modal
+├── .gitignore           # Arquivos e pastas ignorados pelo Git
+├── index.html           # Página inicial
 └── README.md            # Este arquivo
 ```
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🚀 Como Executar
 
-Como este é um projeto de front-end estático, você não precisa de um ambiente de desenvolvimento complexo. Siga os passos abaixo:
+Este é um projeto de front-end estático e pode ser executado facilmente.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
+    git clone https://github.com/seu-usuario/beleza-e-cia.git
     ```
 
-2.  **Navegue até o diretório do projeto:**
+2.  **Navegue até o diretório:**
     ```bash
     cd beleza-e-cia
     ```
 
-3.  **Abra o arquivo principal no navegador:**
-    Abra o arquivo `html/index.html` diretamente no seu navegador de preferência (Google Chrome, Firefox, etc.).
+3.  **Abra no navegador:**
+    Abra o arquivo `index.html` no seu navegador de preferência.
 
-    > **Dica:** Para uma melhor experiência de desenvolvimento, recomenda-se usar um servidor local. Se você usa o Visual Studio Code, a extensão Live Server é uma ótima opção para visualizar as alterações em tempo real.
+    > **Dica:** Para desenvolvimento, use a extensão **Live Server** no Visual Studio Code para ter recarregamento automático ao salvar alterações.
 
 ---
 
 ## 💡 Destaques do Código
 
-### Menu de Navegação Dinâmico (`js/script.js`)
+### Indicador de Menu Dinâmico (`js/script.js`)
 
-O arquivo `script.js` contém uma lógica para criar um efeito visual no menu de navegação. Ele detecta a página atual, aplica a classe `.active` ao item de menu correspondente e move um elemento indicador (`.nav-indicator`) para se posicionar sob o item ativo ou quando o mouse passa sobre outro item.
+Uma função `updateIndicator` calcula a posição e o tamanho do item de menu ativo ou em foco e move um elemento (`.nav-indicator`) para criar um efeito de destaque suave e elegante.
 
-```javascript
-function updateIndicator(currentHoverOrActiveItem, indicatorEl, ulEl) {
-    if (currentHoverOrActiveItem && indicatorEl && ulEl) {
-        // ... Lógica para calcular posição e tamanho ...
-        indicatorEl.style.width = `${currentHoverOrActiveItem.offsetWidth + paddingX}px`;
-        indicatorEl.style.left = `${ulEl.offsetLeft + currentHoverOrActiveItem.offsetLeft - (paddingX / 2)}px`;
-        // ...
-        indicatorEl.style.opacity = '1';
-    }
-}
-```
+### Modal de Agendamento (`js/script.js`)
 
-### Carrossel com Swiper.js (`js/script.js` e `css/carousel.css`)
-
-A inicialização do Swiper é feita com configurações que incluem responsividade, autoplay, navegação e paginação, proporcionando uma experiência de usuário rica.
-
-```javascript
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 24,
-  loop: true,
-  autoplay: {
-    delay: 2800,
-    disableOnInteraction: false,
-  },
-  // ... outras configurações
-  breakpoints: {
-    0: { slidesPerView: 1 },
-    768: { slidesPerView: 2 },
-    992: { slidesPerView: 3 },
-  },
-});
-```
+A lógica do modal é gerenciada para abrir um formulário de agendamento quando o botão "Agendar Agora" é clicado e fechar ao clicar no botão de fechar ou fora da área do modal, melhorando a experiência do usuário.
 
 ---
 
