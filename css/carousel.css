@@ -1,16 +1,14 @@
 /* Container geral do carrossel */
 #servicos {
-  max-width: 1100px; /* Aumentado para acomodar as setas */
-  padding: 60px 20px;
-  position: relative; /* Necessário para posicionar as setas */
+  padding: 60px 0;
 }
 
 /* Container Swiper */
 .swiper {
   max-width: 900px;
   margin: 0 auto;
-  overflow: visible; /* Alterado para que as setas fiquem visíveis */
-  position: static; /* Resetado para não interferir com as setas */
+  overflow: visible;
+  position: relative;
 }
 
 /* Slide individual */
@@ -65,18 +63,18 @@
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
-  position: absolute; /* Alterado para posicionamento absoluto */
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
 }
 
 .swiper-button-prev {
-  left: -60px; /* Posicionado fora do container do swiper */
+  left: -60px;
 }
 
 .swiper-button-next {
-  right: -60px; /* Posicionado fora do container do swiper */
+  right: -60px;
 }
 
 .swiper-button-next:hover,
