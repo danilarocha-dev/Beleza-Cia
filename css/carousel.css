@@ -193,10 +193,10 @@
 
 @media (max-width: 1100px) {
   .swiper-button-prev {
-    left: 10px;
+    left: -10px; /* Ajustado para ficar fora do card */
   }
   .swiper-button-next {
-    right: 10px;
+    right: -10px; /* Ajustado para ficar fora do card */
   }
 }
 
