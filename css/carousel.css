@@ -1,15 +1,16 @@
 /* Container geral do carrossel */
 #servicos {
-  max-width: 1000px;
+  max-width: 1100px; /* Aumentado para acomodar as setas */
   padding: 60px 20px;
+  position: relative; /* Necessário para posicionar as setas */
 }
 
 /* Container Swiper */
 .swiper {
   max-width: 900px;
   margin: 0 auto;
-  overflow: hidden;
-  position: relative;
+  overflow: visible; /* Alterado para que as setas fiquem visíveis */
+  position: static; /* Resetado para não interferir com as setas */
 }
 
 /* Slide individual */
@@ -64,12 +65,24 @@
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
+  position: absolute; /* Alterado para posicionamento absoluto */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: -60px; /* Posicionado fora do container do swiper */
+}
+
+.swiper-button-next {
+  right: -60px; /* Posicionado fora do container do swiper */
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: var(--cor-primaria);
-  transform: scale(1.1);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .swiper-button-next::after,
@@ -174,4 +187,24 @@
 }
 .penteados .caption {
     background-color: var(--cor-primaria-clara);
+}
+
+/* Media Queries para Responsividade do Carrossel */
+
+@media (max-width: 1100px) {
+  .swiper-button-prev {
+    left: 10px;
+  }
+  .swiper-button-next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #servicos {
+    padding: 40px 15px;
+  }
+  .swiper-button-prev, .swiper-button-next {
+    display: none; /* Oculta as setas em telas muito pequenas */
+  }
 }

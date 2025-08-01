@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (typeof Swiper !== 'undefined') {
       var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
-        spaceBetween: 20,
+        spaceBetween: 20, // Reduzido para aproximar os cards
         centeredSlides: false,
         loop: true,
         grabCursor: true,
@@ -131,9 +131,12 @@ document.addEventListener('DOMContentLoaded', function () {
           prevEl: ".swiper-button-prev",
         },
         breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 16, centeredSlides: true },
+          // Mobile
+          0: { slidesPerView: 1, spaceBetween: 15 },
+          // Tablet
           768: { slidesPerView: 2, spaceBetween: 20 },
-          992: { slidesPerView: 3, spaceBetween: 24 }
+          // Desktop
+          992: { slidesPerView: 3, spaceBetween: 20 }
         },
       });
   }
