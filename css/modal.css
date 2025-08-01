@@ -93,3 +93,28 @@
     color: var(--cor-branco);
     cursor: pointer;
 }
+
+/* Media Queries para Responsividade */
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+    margin-top: 10%;
+  }
+
+  .modal-content h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content h2 {
+    font-size: 2rem;
+  }
+
+  #modal-form input, #modal-form select {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
