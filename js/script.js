@@ -149,8 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   }
-});
-
+  
   // --- Animação ScrollReveal para os cards de serviço ---
 
   // Animação para cards que entram da esquerda
@@ -170,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
     easing: 'ease-in-out',
     interval: 150
   });
-
+});
 
 function updateIndicator(currentHoverOrActiveItem, indicatorEl, ulEl) {
   if (currentHoverOrActiveItem && indicatorEl && ulEl) {
