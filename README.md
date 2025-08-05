@@ -16,6 +16,7 @@ O Beleza & Cia é mais do que um simples site institucional; é uma vitrine digi
 *   **Página Inicial Cativante:** Uma seção "hero" com uma mensagem de boas-vindas e um carrossel dinâmico que destaca os principais serviços.
 *   **Carrossel de Serviços Interativo:** Navegação fluida e automática pelos serviços, construída com a biblioteca **Swiper.js**.
 *   **Página de Serviços Detalhada:** Layout organizado que apresenta cada serviço com imagem, descrição e um botão de ação para agendamento.
+*   **Animações de Scroll:** Efeitos de animação sutis nos cards de serviço, implementados com **ScrollReveal.js**, que surgem conforme o usuário rola a página.
 *   **Página de Agendamentos com Kanban:** Uma interface visual no estilo Kanban para que o usuário possa acompanhar o status de seus agendamentos (Agendado, Concluído, Cancelado, etc.).
 *   **Modal de Agendamento:** Um formulário de agendamento que abre em um modal (pop-up), permitindo que o usuário agende um serviço sem sair da página atual.
 *   **Menu de Navegação com Indicador Dinâmico:** Um efeito visual que destaca o item de menu ativo, melhorando a usabilidade e a estética do site.
@@ -27,37 +28,42 @@ O Beleza & Cia é mais do que um simples site institucional; é uma vitrine digi
 
 *   **HTML5:** Estruturação semântica e moderna.
 *   **CSS3:** Estilização avançada, com uso de **Flexbox** para layouts, animações e variáveis CSS para um tema consistente.
-*   **JavaScript (ES6+):** Manipulação do DOM e interatividade.
+*   **JavaScript (ESM - ES6 Modules):** Código modularizado para melhor organização, manutenção e desempenho.
 *   **Dependências (via CDN):**
     *   **Swiper.js:** Para o carrossel de serviços.
+    *   **ScrollReveal.js:** Para animações de scroll.
     *   **Font Awesome:** Para a biblioteca de ícones.
 
 ---
 
 ## 📂 Estrutura de Arquivos
 
-O projeto é organizado de forma modular para facilitar a manutenção:
+O projeto foi refatorado para uma arquitetura de scripts modular, facilitando a manutenção e o carregamento seletivo de funcionalidades.
 
 ```
 beleza&cia/
 ├── css/
-│   ├── agendamentos.css # Estilos da página de agendamentos (Kanban)
-│   ├── carousel.css     # Estilos do carrossel Swiper
-│   ├── footer.css       # Estilos do rodapé
-│   ├── modal.css        # Estilos do modal de agendamento
-│   ├── services.css     # Estilos da página de serviços
-│   ├── style.css        # Estilos globais, header e hero
-│   └── theme.css        # Variáveis CSS (paleta de cores, fontes)
+│   ├── agendamentos.css
+│   ├── carousel.css
+│   ├── footer.css
+│   ├── modal.css
+│   ├── services.css
+│   ├── style.css
+│   └── theme.css
 ├── html/
-│   ├── agendamentos.html # Página de visualização de agendamentos
-│   └── services.html    # Página de detalhes dos serviços
+│   ├── agendamentos.html
+│   └── services.html
 ├── img/
-│   └── ...              # Imagens, logos e favicon
+│   └── ...
 ├── js/
-│   └── script.js        # Lógica do menu, Swiper e modal
-├── .gitignore           # Arquivos e pastas ignorados pelo Git
-├── index.html           # Página inicial
-└── README.md            # Este arquivo
+│   ├── carrossel.js   # Módulo do Swiper (carregado em index.html)
+│   ├── menu.js        # Módulo do menu (carregado em todas as páginas)
+│   ├── modal.js       # Módulo do modal (carregado em services.html)
+│   ├── reveal.js      # Módulo do ScrollReveal (carregado em services.html)
+│   └── script.js      # Controlador principal: importa e executa os módulos necessários
+├── .gitignore
+├── index.html
+└── README.md
 ```
 
 ---
@@ -85,13 +91,19 @@ Este é um projeto de front-end estático e pode ser executado facilmente.
 
 ## 💡 Destaques do Código
 
-### Indicador de Menu Dinâmico (`js/script.js`)
+### Arquitetura de Scripts Modular (`js/`)
 
-Uma função `updateIndicator` calcula a posição e o tamanho do item de menu ativo ou em foco e move um elemento (`.nav-indicator`) para criar um efeito de destaque suave e elegante.
+O JavaScript foi refatorado para usar **Módulos ES6 (ESM)**. O arquivo `js/script.js` atua como um **controlador central** que detecta a página atual e carrega apenas os módulos necessários para ela.
 
-### Modal de Agendamento (`js/script.js`)
+*   `menu.js`: A lógica do menu de navegação, presente em todas as páginas.
+*   `carrossel.js`: Inicializa o Swiper.js, carregado apenas na `index.html`.
+*   `modal.js` e `reveal.js`: Funcionalidades de modal e animação, carregadas apenas na `services.html`.
 
-A lógica do modal é gerenciada para abrir um formulário de agendamento quando o botão "Agendar Agora" é clicado e fechar ao clicar no botão de fechar ou fora da área do modal, melhorando a experiência do usuário.
+Essa abordagem melhora o desempenho, pois cada página carrega apenas o código que realmente utiliza.
+
+### Indicador de Menu Dinâmico (`js/menu.js`)
+
+Uma função `updateIndicator` calcula a posição e o tamanho do item de menu ativo e move um elemento (`.nav-indicator`) para criar um efeito de destaque suave e elegante.
 
 ---
 
