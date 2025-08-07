@@ -1,0 +1,114 @@
+/*formatacao do menu*/
+nav ul { 
+  list-style: none;  
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--cor-texto-principal);
+  transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+  color: var(--cor-primaria-clara);
+}
+
+nav ul li a:hover {
+  color: var(--cor-primaria-clara);
+}
+
+/*active*/
+.menu-navegacao {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.menu-navegacao ul {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+.menu-navegacao .menu-item {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-navegacao .menu-item a {
+  padding: 8px 16px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-navegacao .menu-item a:hover {
+  color: var(--cor-primaria-clara);
+}
+
+.menu-navegacao .menu-item.active a {
+  color: var(--cor-primaria-clara);
+}
+
+
+.nav-indicator {
+  position: absolute;
+  background-color: transparent;
+  border: 2px solid var(--cor-primaria-clara);
+  border-radius: 25px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;     /* Começa invisível, JS controla a visibilidade */
+                 /* width, height, top, left serão definidos dinamicamente pelo JavaScript */
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 15px;
+}
+
+.redes-sociais i {
+   cursor: pointer;
+   font-size: 25px;
+   color: var(--cor-texto-principal);
+   transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.redes-sociais i:hover {
+  transform: scale(1.2);
+  color: var(--cor-primaria-clara);
+}
+
+@media screen and (max-width: 1170px) {
+    #dishes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dish {
+        width: calc(50% - 12px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dish {
+        width: 100%;
+    }
+
+    #menu .section-subtitle {
+        text-align: center;
+    }
+}

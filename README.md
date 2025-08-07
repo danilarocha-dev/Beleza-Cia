@@ -1,12 +1,12 @@
 # Beleza & Cia
 
-Bem-vinda ao repositório do **Beleza & Cia**, um site elegante e moderno para um salão de beleza, projetado para oferecer uma experiência de usuário impecável e facilitar o agendamento de serviços.
+ **Beleza & Cia**, um site elegante e moderno para um salão de beleza, construído com HTML, CSS e JavaScript. Este projeto apresenta um design limpo com animações suaves
 
 ---
 
-## 🚀 Visão Geral do Projeto
+## 🌐 Visualize o projeto:
 
-O Beleza & Cia é mais do que um simples site institucional; é uma vitrine digital interativa. O design foi pensado para ser atraente e funcional, guiando o usuário desde a descoberta dos serviços até a conclusão do agendamento, tudo de forma intuitiva e responsiva.
+**[Ver Projeto Online](https://danilarocha-dev.github.io/Beleza-Cia//)**
 
 ---
 
@@ -26,9 +26,9 @@ O Beleza & Cia é mais do que um simples site institucional; é uma vitrine digi
 
 ## 🛠️ Tecnologias e Ferramentas
 
-*   **HTML5:** Estruturação semântica e moderna.
+*   **HTML5:** Estruturação semântica.
 *   **CSS3:** Estilização avançada, com uso de **Flexbox** para layouts, animações e variáveis CSS para um tema consistente.
-*   **JavaScript (ESM - ES6 Modules):** Código modularizado para melhor organização, manutenção e desempenho.
+*   **JavaScript (ESM - ES6 Modules):** Funcionalidade interativa
 *   **Dependências (via CDN):**
     *   **Swiper.js:** Para o carrossel de serviços.
     *   **ScrollReveal.js:** Para animações de scroll.
