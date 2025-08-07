@@ -166,68 +166,82 @@ body {
 }
 
 @media (max-width: 768px) {
-  .servico-card {
-    flex-direction: column; 
-    text-align: center;
-    width: 95%;
-    padding: 10px; 
+  .servicos-grid {
+    gap: 40px; /* Reduz o espaço entre os cards */
   }
 
+  .servico-card,
+  .servico-card.left,
   .servico-card.right {
-    flex-direction: column; /* Garante que a direção seja coluna também */
+    flex-direction: column;
+    width: 90%;
+    max-width: 450px; /* Garante que o card não fique excessivamente largo */
+    padding: 25px;
+    margin: 0 auto; /* Centraliza o card */
+    transform: none; /* Reseta transformações de desktop */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+  }
+
+  .servico-info {
+    margin-top: 0; /* Reseta a margem negativa */
+    gap: 15px; /* Adiciona espaço entre os elementos internos */
   }
 
   .servico-card.right .servico-info {
-    align-items: center; 
+    align-items: center;
+  }
+
+  .servico-imagem-wrapper {
+    margin-bottom: 0; /* O gap do flex-container pai cuidará do espaçamento */
   }
 
   .servico-imagem-wrapper,
   .servico-imagem-wrapper img {
-    width: 250px;
-    height: 250px;
-    margin-bottom: 20px;
+    width: 100%; /* Imagem ocupa toda a largura do wrapper */
+    max-width: 280px; /* Limita o tamanho máximo da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+    aspect-ratio: 1 / 1; /* Garante que a imagem seja quadrada */
   }
 
   .servico-info h3 {
-    font-size: 1.8em;
+    font-size: 1.9rem;
   }
 
   .servico-info p {
-    font-size: 1em;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .botao-agendar {
-    width: 80%;
-    margin: 20px auto 0 auto;
+    width: 90%;
+    max-width: 280px; /* Consistente com a imagem */
+    height: 50px;
+    font-size: 1rem;
+    margin-top: 10px;
   }
 
   .section-subtitle {
-    font-size: 22px;
+    font-size: 1.5rem;
     max-width: 90%;
   }
 }
 
 @media (max-width: 480px) {
-  .servico-imagem-wrapper,
-  .servico-imagem-wrapper img {
-    width: 200px;
-    height: 200px;
-  }
-
   .servico-info h3 {
-    font-size: 1.5em;
+    font-size: 1.6rem;
   }
 
   .servico-info p {
-    font-size: 0.9em;
+    font-size: 0.95rem;
   }
 
   .section-subtitle {
-    font-size: 18px;
+    font-size: 1.3rem;
   }
 
   .botao-agendar {
-    width: 90%;
-    margin: 15px auto 0 auto;
+    height: 45px;
+    font-size: 0.9rem;
   }
 }
