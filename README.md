@@ -8,7 +8,6 @@
 
 **[Ver Projeto Online](https://danilarocha-dev.github.io/Beleza-Cia//)**
 
----
 
 ## ✨ Funcionalidades Implementadas
 
