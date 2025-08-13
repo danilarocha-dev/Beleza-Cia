@@ -2,7 +2,7 @@
 
 .container-agendamentos {
     padding: 0 60px;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     text-align: center;
 }
@@ -20,7 +20,6 @@
     margin-bottom: 20px;
 }
 
-/*inicio do kanban*/
 .kanban {
     display: flex;
     gap: 20px;
@@ -43,10 +42,10 @@
     position: relative;
     min-width: 252px;
 }
-.kanban-column::after { /*ver se ha necessidade de deixar esse bloco de código*/
+.kanban-column::after {
     position: absolute;
     content: '';
-    height: 5px;
+    height: 7px;
     width: 100%;
     top: 0;
     left: 0;
@@ -72,7 +71,7 @@
 }
 .kanban-title h2 {
     font-size: 18px;
-    color: #4b5563; /*mudar depois a cor para uma padrao do sistema*/
+    color: var(--cor-texto-secundario);
     font-weight: 600;
 }
 
@@ -88,14 +87,14 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background-color: #ffffff; /*mudar cor*/
+    background-color: var(--cor-branco);
     border-radius: 14px;
     padding: 10px;
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 .badge {
-    color: #ffffff;
+    color: var(--cor-branco);
     width: fit-content;
     font-size: 12px;
     padding: 4px 8px;
@@ -105,7 +104,7 @@
     background-color: #d573b6;
 }
 
-.badge.medium { /*corte de cabelo*/
+.badge.medium {
     background-color: #fea065;
 }
 
@@ -113,28 +112,10 @@
     background-color: #92a5fb;
 }
 
-.badge.lights { /*coloração e luzes*/
+.badge.lights {
     background-color: #6ed0bc;
 }
 
-/* Tablets */
-@media (max-width: 992px) {
-  .kanban {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .container-agendamentos {
-    padding: 0 30px;
-  }
+.card-title {
+    text-align: left;
 }
-
-/* Dispositivos Móveis */
-@media (max-width: 768px) {
-  .kanban-board {
-    grid-template-columns: 1fr;
-  }
-  .container-agendamentos h1 {
-    font-size: 2.5rem;
-  }
-}
-
-
