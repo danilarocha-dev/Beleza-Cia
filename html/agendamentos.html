@@ -38,71 +38,114 @@
             <h1>Agendamentos</h1>
             <p class="section-subtitle">Visualize e gerencie seus horários marcados.</p>
 
-            <div class="kanban-board">
-                <!-- Coluna Agendados -->
-                <div class="kanban-column">
-                    <h2 class="column-title agendado">Agendados</h2>
-                    <div class="agendamento-card">
-                        <div class="card-body">
-                            <p><strong>Nome:</strong> Ana Silva</p>
-                            <p><strong>Data:</strong> 05/08/2025</p>
-                            <p><strong>Hora:</strong> 14:30</p>
-                            <p><strong>Serviço:</strong> Corte de cabelo</p>
-                        </div>
+            <div class="kanban">
+                <!-- Coluna 1 Agendados -->
+                <div class="kanban-column" data-id="1">
+                    <div class="kanban-title">
+                        <h2>
+                            Agendados
+                        </h2>
                     </div>
-                    <div class="agendamento-card">
-                        <div class="card-body">
-                            <p><strong>Nome:</strong> Carla Souza</p>
-                            <p><strong>Data:</strong> 12/08/2025</p>
-                            <p><strong>Hora:</strong> 11:00</p>
-                            <p><strong>Serviço:</strong> Manicure e Pedicure</p>
+
+                    <div class="kanban-cards">
+                        <div class="kanban-card" draggable="true">
+                            <div class="badge medium">
+                                <span>
+                                    Corte de cabelo
+                                </span>
+                            </div>
+
+                            <p class="card-title">
+                                <strong>Nome:</strong> Ana Silva<br>
+                                <strong>Data:</strong> 25/08/2025<br>
+                                <strong>Hora:</strong> 15:00
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Coluna Cancelados -->
-                <div class="kanban-column">
-                    <h2 class="column-title cancelado">Cancelados</h2>
-                    <div class="agendamento-card">
-                        <div class="card-body">
-                            <p><strong>Nome:</strong> Ana Silva</p>
-                            <p><strong>Data:</strong> 10/07/2025</p>
-                            <p><strong>Hora:</strong> 16:00</p>
-                            <p><strong>Serviço:</strong> Escova Perfeita</p>
+                <!-- Coluna 2 Cancelados -->
+                <div class="kanban-column" data-id="2">
+                    <div class="kanban-title">
+                        <h2>
+                            Cancelados
+                        </h2>
+                    </div>
+
+                    <div class="kanban-cards">
+                        <div class="kanban-card" draggable="true">
+                            <div class="badge high">
+                                <span>
+                                    Maquiagem
+                                </span>
+                            </div>
+
+                            <p class="card-title">
+                                <strong>Nome:</strong> Alana<br>
+                                <strong>Data:</strong> 29/08/2025<br>
+                                <strong>Hora:</strong> 17:00
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Coluna Concluídos -->
-                <div class="kanban-column">
-                    <h2 class="column-title concluido">Concluídos</h2>
-                    <div class="agendamento-card">
-                        <div class="card-body">
-                            <p><strong>Nome:</strong> Carla Souza</p>
-                            <p><strong>Data:</strong> 18/07/2025</p>
-                            <p><strong>Hora:</strong> 10:00</p>
-                            <p><strong>Serviço:</strong> Coloração e Luzes</p>
+                <!-- Coluna 3 Concluídos -->
+                <div class="kanban-column" data-id="3">
+                    <div class="kanban-title">
+                        <h2>
+                            Concluidos
+                        </h2>
+                    </div>
+
+                    <div class="kanban-cards">
+                        <div class="kanban-card" draggable="true">
+                            <div class="badge low">
+                                <span>
+                                    Coloração e Luzes
+                                </span>
+                            </div>
+
+                            <p class="card-title">
+                                <strong>Nome:</strong> Karla<br>
+                                <strong>Data:</strong> 29/09/2025<br>
+                                <strong>Hora:</strong> 13:00
+                            </p>
+
                         </div>
                     </div>
                 </div>
 
-                <!-- Coluna Reagendar -->
-                <div class="kanban-column">
-                    <h2 class="column-title reagendar">Reagendar</h2>
-                    <div class="agendamento-card">
-                        <div class="card-body">
-                            <p><strong>Nome:</strong> Ana Silva</p>
-                            <p><strong>Data:</strong> 25/07/2025</p>
-                            <p><strong>Hora:</strong> 15:00</p>
-                            <p><strong>Serviço:</strong> Hidratação Capilar</p>
+                <!-- Coluna 4 Reagendar -->
+                <div class="kanban-column" data-id="4">
+                    <div class="kanban-title">
+                        <h2>
+                            Reagendar
+                        </h2>
+                    </div>
+
+                    <div class="kanban-cards">
+                        <div class="kanban-card" draggable="true">
+                            <div class="badge high">
+                                <span>
+                                    Hidratação Capilar
+                                </span>
+                            </div>
+
+                            <p class="card-title">
+                                <strong>Nome:</strong> Sofia<br>
+                                <strong>Data:</strong> 15/09/2025<br>
+                                <strong>Hora:</strong> 12:00
+                            </p>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </main>
     </section>
 
-    
+
 
     <footer id="rodape">
         <p>Copyright &copy; Danila Rocha. Todos os Direitos Reservados.</p>
