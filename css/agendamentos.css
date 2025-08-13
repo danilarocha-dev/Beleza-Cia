@@ -128,8 +128,6 @@
     transform: scale(1.02);
 }
 
-/* Media Queries para Responsividade */
-
 /* Tablet */
 @media (max-width: 1024px) {
     .hero {
@@ -154,7 +152,7 @@
 /* Mobile */
 @media (max-width: 768px) {
     .hero {
-        padding: 30px 15px;
+        padding: 15px 15px 30px;
     }
 
     .container-agendamentos {
@@ -174,10 +172,10 @@
     .kanban {
         padding: 15px 0;
         gap: 12px;
-        height: auto; /* Altura automática para se ajustar ao conteúdo */
+        
     }
 
     .kanban-column {
-        min-width: 220px;
+        min-width: 210px;
     }
 }
