@@ -5,6 +5,7 @@
     max-width: 1500px;
     margin: 0 auto;
     text-align: center;
+    margin-top: -40px;
 }
 
 .container-agendamentos h1 {
@@ -41,6 +42,7 @@
     overflow: hidden;
     position: relative;
     min-width: 252px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .kanban-column::after {
     position: absolute;
@@ -118,4 +120,64 @@
 
 .card-title {
     text-align: left;
+}
+
+/* Estilo para a coluna do Kanban em destaque */
+.kanban-column.highlight {
+    box-shadow: 0px 10px 20px -3px rgba(var(--cor-primaria-rgb), 0.4);
+    transform: scale(1.02);
+}
+
+/* Media Queries para Responsividade */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 40px 30px;
+    }
+
+    .container-agendamentos {
+        padding: 0;
+    }
+
+    .kanban {
+        width: 100%;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    .kanban-column {
+        min-width: 240px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .container-agendamentos {
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .container-agendamentos h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .kanban {
+        padding: 15px 0;
+        gap: 12px;
+        height: auto; /* Altura automática para se ajustar ao conteúdo */
+    }
+
+    .kanban-column {
+        min-width: 220px;
+    }
 }
