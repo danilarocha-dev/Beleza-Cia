@@ -1,208 +1,170 @@
 /* Container geral do carrossel */
 #servicos {
-  padding: 50px 0;
+  /* Antes: padding fixo 50px; Agora com clamp para responder a qualquer largura */
+  padding: clamp(32px, 5vw, 64px) 0; /* aumenta ou diminui suavemente conforme viewport */
 }
 
 /* Container Swiper */
 .swiper {
-  max-width: 900px;
-  margin: 0 auto;
-  overflow: visible;
-  position: relative;
+  /* Antes: max-width: 900px; Agora um pouco maior para caber 3 cards confortavelmente */
+  max-width: 1100px; /* melhora a harmonia quando slidesPerView = 3 */
+  width: 100%;       /* garante uso total da largura disponível no container pai */
+  margin: 0 auto;    /* centraliza o carrossel */
+  overflow: visible; /* permite sombras/hover "saírem" do slide */
+  position: relative;/* necessário para posicionar setas/paginação */
+
+  /* Espaço dedicado para a paginação ficar abaixo dos cards sem "grudar" */
+  padding-bottom: 48px; /* antes a paginação ficava colada; agora há respiro */
 }
 
 /* Slide individual */
 .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex;                /* permite centralizar internamente */
+  justify-content: center;      /* centraliza o card dentro do slide */
+  align-items: center;          /* alinha verticalmente */
+  /* Não define largura fixa: o Swiper calcula com base no slidesPerView */
 }
 
-/* Cards */
+/* Cards (AJUSTE CRÍTICO: de fixo para fluido + aspect-ratio) */
 .card {
-  width: 260px;
-  height: 270px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Antes: width/height fixos (260x270) -> causava quebra no tablet/mobile */
+  width: 100%;                  /* o card passa a ocupar 100% da largura do slide */
+  max-width: 340px;             /* limite superior para não ficar gigante em telas grandes */
+  aspect-ratio: 10 / 11;        /* mantém proporção visual estável em qualquer tela */
+  height: auto;                 /* altura derivada do aspect-ratio */
+
+  background-size: cover;       /* imagem cobre toda a área */
+  background-position: center;  /* centraliza a imagem */
+  border-radius: 14px;          /* leve ajuste no raio para visual mais suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* sombra padrão agradável */
+  position: relative;           /* necessário para posicionar a legenda */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animação suave */
 }
 
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+/* Hover apenas em dispositivos que suportam hover (evita "saltos" no mobile) */
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-2px) scale(1.02); /* efeito discreto e elegante */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  }
 }
 
 /* Legenda (caption) */
 .card .caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 12px 0;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-  color: var(--cor-branco);
-  background-color: rgba(0, 0, 0, 0.6);
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  position: absolute;           /* fixa no rodapé do card */
+  bottom: 0; left: 0;           /* encosta na base */
+  width: 100%;                  /* ocupa toda a largura */
+  padding: 12px 10px;           /* respiro interno */
+  font-size: clamp(14px, 1.6vw, 16px); /* texto adapta sem estourar */
+  font-weight: bold;            /* destaca o título */
+  text-align: center;           /* centraliza o texto */
+  color: var(--cor-branco);     /* mantém a cor do texto */
+  /* O fundo é definido por card específico (facial, maquiagem...) */
+  border-bottom-left-radius: 14px;  /* acompanha o raio do card */
+  border-bottom-right-radius: 14px; /* idem */
+  /* Dica: se quiser mais contraste universal, pode adicionar um leve backdrop-filter aqui */
 }
 
-/* Botões Swiper customizados */
+/* Botões Swiper customizados (VISÍVEIS EM TODAS AS TELAS) */
 .swiper-button-next,
 .swiper-button-prev {
-  width: 42px;
-  height: 42px;
-  background-color: var(--cor-primaria-clara);
-  border-radius: 50%;
-  display: flex;
+  width: clamp(36px, 4vw, 44px);   /* botão responde ao tamanho da tela */
+  height: clamp(36px, 4vw, 44px);  /* mantém formato circular */
+  background-color: var(--cor-primaria-clara); /* usa sua paleta */
+  border-radius: 50%;              /* formato circular */
+  display: flex;                   /* centraliza o ícone interno (pseudo-elemento) */
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); /* sombra leve */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* animação suave */
+  position: absolute;              /* posicionamento relativo ao .swiper */
+  top: 50%;                        /* centraliza verticalmente */
+  transform: translateY(-50%);     /* corrige o centro do botão */
+  z-index: 10;                     /* fica acima dos cards */
 }
 
-.swiper-button-prev {
-  left: -80px;
+/* Antes: setas muito afastadas (left: -80px / right: -60px) -> agora perto da borda */
+/* Mobile/Tablet: setas junto às bordas internas */
+.swiper-button-prev { left: 8px; }  /* encosta suavemente na borda esquerda */
+.swiper-button-next { right: 8px; } /* encosta suavemente na borda direita */
+
+/* Desktop: dá um respiro extra, sem "sumir" longe */
+@media (min-width: 992px) {
+  .swiper-button-prev { left: -12px; }  /* levemente para fora, mas visível */
+  .swiper-button-next { right: -12px; } /* idem */
 }
 
-.swiper-button-next {
-  right: -60px;
-}
-
+/* Estado de foco e hover para melhor UX */
 .swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background-color: var(--cor-primaria);
-  transform: translateY(-50%) scale(1.1);
+.swiper-button-prev:hover,
+.swiper-button-next:focus-visible,
+.swiper-button-prev:focus-visible {
+  background-color: var(--cor-primaria);         /* cor mais forte no hover/foco */
+  transform: translateY(-50%) scale(1.06);       /* ligeiro destaque */
+  outline: none;                                  /* remove contorno padrão */
 }
 
+/* Remove o ícone padrão do Swiper */
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  display: none;
+  display: none; /* sem dupla-iconografia */
 }
 
-/* Ícones usando Font Awesome para setas */
+/* Ícones usando Font Awesome para setas (mantido) */
 .swiper-button-next::before,
 .swiper-button-prev::before {
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Free"; /* usa a família do FA */
   font-weight: 900;
-  font-size: 18px;
-  color: var(--cor-branco);
+  font-size: 18px;                    /* tamanho do ícone */
+  color: var(--cor-branco);           /* cor do ícone */
   display: inline-block;
+  line-height: 1;
 }
 
-.swiper-button-next::before {
-  content: "\f105"; /* ícone → */
-}
-
-.swiper-button-prev::before {
-  content: "\f104"; /* ícone ← */
-}
-
-/* Paginação (opcional) */
-.swiper-pagination {
-  position: absolute;
-  bottom: 20px; /* Desce um pouco mais a paginação */
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  z-index: 10;
-}
-
-.swiper-pagination{
-  opacity: 1;
-}
-
-.swiper-pagination-active {
-  background-color: var(--cor-primaria);
-}
+.swiper-button-next::before { content: "\f105"; } /* → */
+.swiper-button-prev::before { content: "\f104"; } /* ← */
 
 
-/* Fundos das Imagens e Cores das Legendas */
-.facial {
-    background-image: url('../img/02.png');
-}
-.facial .caption {
-    background-color: var(--cor-primaria-clara);
-}
+/* Fundos das Imagens e Cores das Legendas (mantidos) */
+.facial { background-image: url('../img/02.png'); }
+.facial .caption { background-color: var(--cor-primaria-clara); }
 
-.maquiagem {
-    background-image: url('../img/03.jpg');
-}
-.maquiagem .caption {
-    background-color: var(--cor-carrossel-fundo-legenda);
-}
+.maquiagem { background-image: url('../img/03.jpg'); }
+.maquiagem .caption { background-color: var(--cor-carrossel-fundo-legenda); }
 
-.outro { 
-    background-image: url('../img/04.jpg');
-}
-.outro .caption {
-    background-color: var(--cor-primaria-clara);
-}
+.outro { background-image: url('../img/04.jpg'); }
+.outro .caption { background-color: var(--cor-primaria-clara); }
 
-.cortes {
-    background-image: url('../img/05.png');
-}
-.cortes .caption {
-    background-color: var(--cor-carrossel-fundo-legenda);
-}
+.cortes { background-image: url('../img/05.png'); }
+.cortes .caption { background-color: var(--cor-carrossel-fundo-legenda); }
 
-.coloracao {
-    background-image: url('../img/06.png');
-}
-.coloracao .caption {
-    background-color: var(--cor-primaria-clara);
-}
+.coloracao { background-image: url('../img/06.png'); }
+.coloracao .caption { background-color: var(--cor-primaria-clara); }
 
-.escova { 
-    background-image: url('../img/07.png');
-}
-.escova .caption {
-    background-color: var(--cor-carrossel-fundo-legenda);
-}
+.escova { background-image: url('../img/07.png'); }
+.escova .caption { background-color: var(--cor-carrossel-fundo-legenda); }
 
-.manicure {
-    background-image: url('../img/08.png');
-}
-.manicure .caption {
-    background-color: var(--cor-primaria-clara);
-}
+.manicure { background-image: url('../img/08.png'); }
+.manicure .caption { background-color: var(--cor-primaria-clara); }
 
-.hidratacao {
-    background-image: url('../img/09.png');
-}
-.hidratacao .caption {
-    background-color: var(--cor-carrossel-fundo-legenda);
-}
+.hidratacao { background-image: url('../img/09.png'); }
+.hidratacao .caption { background-color: var(--cor-carrossel-fundo-legenda); }
 
-.penteados { 
-    background-image: url('../img/10.png');
-}
-.penteados .caption {
-    background-color: var(--cor-primaria-clara);
+.penteados { background-image: url('../img/10.png'); }
+.penteados .caption { background-color: var(--cor-primaria-clara); }
+
+/* Regras de responsividade complementares */
+@media (max-width: 768px) {
+  /* Antes: você escondia as setas em telas pequenas -> REMOVIDO.
+     Aqui, apenas certificamos que os botões continuem legíveis. */
+  .swiper-button-next::before,
+  .swiper-button-prev::before {
+    font-size: 16px; /* leve ajuste no ícone para telas pequenas */
+  }
 }
 
 @media (max-width: 1100px) {
-  .swiper-button-prev {
-    left: -10px; /* Ajustado para ficar fora do card */
-  }
-  .swiper-button-next {
-    right: -10px; /* Ajustado para ficar fora do card */
-  }
-}
-
-@media (max-width: 768px) {
-  #servicos {
-    padding: 40px 15px;
-  }
-  .swiper-button-prev, .swiper-button-next {
-    display: none; /* Oculta as setas em telas muito pequenas */
-  }
+  /* Ajuste leve para o desktop "menor" (evita setas muito afastadas) */
+  .swiper-button-prev { left: 0; }   /* aproxima um pouco */
+  .swiper-button-next { right: 0; }  /* aproxima um pouco */
 }
