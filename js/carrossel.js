@@ -11,7 +11,7 @@ export function iniciarCarrossel() {
       spaceBetween: 16,          // espaçamento consistente (harmoniza com as bordas)
 
       centeredSlides: false,     // não centraliza o slide (mantém grade limpa)
-      loop: true,                // looping contínuo
+      loop: true,                // looping infinito
       grabCursor: true,          // cursor de "mão" melhora a UX
       speed: 900,                // velocidade de transição (suave)
 
