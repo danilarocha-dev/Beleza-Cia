@@ -1,4 +1,10 @@
 /*formatacao do menu*/
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 nav ul { 
   list-style: none;  
   display: flex;
