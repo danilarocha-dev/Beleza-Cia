@@ -1,4 +1,5 @@
-# Beleza & Cia 💇‍♀️✨
+<h1 align="center">Beleza & Cia 💇‍♀️✨</h1>
+
 
 **Beleza & Cia** é um site elegante e moderno para um salão de beleza, construído com HTML, CSS e JavaScript puros. O projeto foi desenhado para ser uma vitrine digital atraente, interativa e que proporciona uma ótima experiência ao usuário.
 
