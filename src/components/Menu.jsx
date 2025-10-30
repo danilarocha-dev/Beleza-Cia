@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Kanban = () => {
+const Menu = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Kanban = () => {
   )
 }
 
-export default Kanban
+export default Menu
