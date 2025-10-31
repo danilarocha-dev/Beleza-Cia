@@ -1,14 +1,21 @@
+/* Fonte personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Fonte personalizada */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
 :root {
-  --cor-primaria: #ff69b4;
-  --cor-secundaria: #fce4ec;
-  --cor-texto: #4a4a4a;
-  --cor-fundo: #ffffff;
-  --cor-borda: #e0e0e0;
+  --primaria: #f47878;
+  --primaria-rgb: 244, 120, 120;
+  --primaria-clara: #f9a7a7;
+  --primaria-fundo: #fce4ec;
+  --primaria-texto: #f8b7c2;
+  --texto-principal: #333;
+  --texto-secundario: #555;
+  --cor-fundo: #fdfdfd;
+  --borda: #ddd;
+  --branco: #fff;
+  --botao: #f5a1b6d3;
+  --carrossel-fundo-legenda: #000000;
 }
