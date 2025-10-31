@@ -1,38 +1,43 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-const Menu = ({ links, isMenuOpen, onToggleMenu }) => {
+const Menu = ({ links = [], isMenuOpen, onToggleMenu }) => {
   return (
     <>
       {/* Desktop Menu */}
-      <nav className="hidden md:flex items-center justify-between px-8 py-4">
-        
-        {/* Logo */}
-        <div className="text-2xl font-bold text-[#333]">
-          Beleza & <span className="font-pacifico text-pink-500">C</span>ia
+      <nav className="hidden md:grid md:grid-cols-3 items-center px-8 py-2">
+        <div className="justify-self-start text-xl font-bold text-[#333] uppercase">
+          BELEZA & Cia
         </div>
-
-        {/* Nav Links */}
-        <ul className="flex gap-8">
+        <ul className="flex gap-8 justify-self-center">
           {links.map((link) => (
             <li key={link.name}>
-              <Link to={link.path} className="text-[#333] hover:text-pink-500 transition-colors duration-300">{link.name}</Link>
+              <NavLink 
+                to={link.path} 
+                className={({ isActive }) => 
+                  `pb-1 transition-colors duration-300 ${
+                    isActive 
+                      ? 'text-pink-500 border-b-2 border-pink-500' 
+                      : 'text-[#333] hover:text-pink-500'
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
             </li>
           ))}
         </ul>
-
-        {/* Social Icons */}
-        <div className="flex gap-6 text-[#333] text-xl">
+        <div className="flex gap-6 text-[#333] text-xl justify-self-end">
           <a href="#" className="hover:text-pink-500 transition-colors duration-300"><i className="fab fa-facebook-f"></i></a>
           <a href="#" className="hover:text-pink-500 transition-colors duration-300"><i className="fab fa-instagram"></i></a>
-          <a href="#" className="hover:text-pink-500 transition-colors duration-300"><i className="fab fa-whatsapp"></i></a>
+          <a href="#" className="hover:text-pink-500 transition-colors duration-300"><i className="fab fa-twitter"></i></a>
         </div>
       </nav>
 
       {/* Mobile Header */}
       <div className="md:hidden flex justify-between items-center px-6 py-4">
-        <div className="text-2xl font-bold text-[#333]">
-          Beleza & <span className="font-pacifico text-pink-500">C</span>ia
+        <div className="text-2xl font-bold text-[#333] uppercase">
+          BELEZA & Cia
         </div>
         <button onClick={onToggleMenu} aria-label="Toggle Menu">
           <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl text-[#333]`}></i>
@@ -44,26 +49,18 @@ const Menu = ({ links, isMenuOpen, onToggleMenu }) => {
         <ul className="flex flex-col items-center gap-4 py-4">
           {links.map((link) => (
             <li key={link.name}>
-              <Link to={link.path} className="text-[#333] hover:text-pink-500 transition-colors" onClick={onToggleMenu}>{link.name}</Link>
+
+              {}
+              <NavLink to={link.path} className="text-[#333] hover:text-pink-500 transition-colors" onClick={onToggleMenu}>
+                {link.name}
+              </NavLink>
             </li>
           ))}
         </ul>
-        <div className="flex justify-center gap-8 text-[#333] text-xl pb-4">
-          <a href="#" className="hover:text-pink-500 transition-colors"><i className="fab fa-facebook-f"></i></a>
-          <a href="#" className="hover:text-pink-500 transition-colors"><i className="fab fa-instagram"></i></a>
-          <a href="#" className="hover:text-pink-500 transition-colors"><i className="fab fa-whatsapp"></i></a>
-        </div>
       </div>
-
-        
-
-        
-
-      
-
-
     </>
-  )
+  );
 }
+
 
 export default Menu
