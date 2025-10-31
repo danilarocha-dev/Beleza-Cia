@@ -1,11 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function Menu({ links, isMenuOpen, onToggleMenu }) {
+const Menu = ({ links, isMenuOpen, onToggleMenu }) => {
   return (
     <>
       {/* Desktop Menu */}
       <nav className="hidden md:flex items-center justify-between px-8 py-4">
+        
         {/* Logo */}
         <div className="text-2xl font-bold text-[#333]">
           Beleza & <span className="font-pacifico text-pink-500">C</span>ia
@@ -53,6 +54,16 @@ export default function Menu({ links, isMenuOpen, onToggleMenu }) {
           <a href="#" className="hover:text-pink-500 transition-colors"><i className="fab fa-whatsapp"></i></a>
         </div>
       </div>
+
+        
+
+        
+
+      
+
+
     </>
-  );
+  )
 }
+
+export default Menu
